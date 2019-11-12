@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
       </button>
         <%= link_to image_tag('logo.png', width:"80px", height:"80px"), root_path, class: "navbar-brand center" %>
-      <a class="navbar-brand bold-text-nav" id="logo" href="#">Podly</a>
+        <%= link_to "Podly", root_path, class: "navbar-brand bold-text-nav", id:"logo" %>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,7 +17,7 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">About Us</a></li>
         <li><a href="#">Contact Us</a></li>
-        <li><button type="button" class="btn btn-default login-button"><a>Log in<a></button></li>
+        <li><div><%= link_to "Log in", user_session_path, class: "btn btn-default login-button" %></div></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->

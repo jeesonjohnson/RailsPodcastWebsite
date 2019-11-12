@@ -53,73 +53,61 @@ $jumbotron-heading-color: $overall-text-color;
 }
 
 .login-button {
-  margin-top: 30px ;
-  width: 120px ;
-  height: 45px;
-  background-color: $logo-highlight-color ;
-  align-content: center ;
-  display: block ;
-  border-radius: 15px 15px 15px 15px ;
-
-  border: 0px;
-  a {
-    font-weight: 700 !important;
-    font-size: 1.5em ;
-    color: black ;
-    text-align: center ;
-    align-content: center ;
-    text-decoration: none ; 
-  }
-}
-
-.login-button:hover {
   margin-top: 30px;
   width: 120px;
   height: 45px;
+  background-color: $logo-highlight-color;
+  align-content: center;
+  display: block;
   border-radius: 15px 15px 15px 15px;
-  background-color: #2fb45a;
-  -webkit-transform: translateY(1px);
-  transform: translateY(1px);
 
-  a {
-    font-weight: 700 !important;
-    font-size: 1.6em;
-    text-align: center;
-    color: black;
-    align-content: center;
-    text-decoration: none;
-  }
+  border: 0px;
+  font-weight: 700 !important;
+  font-size: 1.5em;
+  color: black;
+  text-align: center;
+  align-content: center;
+  text-decoration: none;
 }
 
+.login-button:hover {
+  margin-top: 30px !important;
+  width: 120px ;
+  height: 45px; 
+  border-radius: 15px 15px 15px 15px !important;
+  background-color: #2fb45a !important;
+  font-weight: 700 !important;
+  font-size: 1.6em !important;
+  text-align: center !important;
+  color: black !important;
+  align-content: center !important;
+  text-decoration: none !important;
+}
 
 //Flipping word
 
 .flipping-text-outer-styling {
-  
   overflow: hidden;
   float: left;
   margin-right: 20px;
   cursor: pointer;
   height: 5.2em;
   overflow: hidden;
-  	  margin: 0 auto;
-	  text-align: center;
-	  font-family: sans-serif;
-	  font-weight: 600;
-	  color: $overall-secondary-yellow;
-    overflow: hidden;
-    background-color: $overall-background;
-	  
+  margin: 0 auto;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 600;
+  color: $overall-secondary-yellow;
+  overflow: hidden;
+  background-color: $overall-background;
 }
 
 .scroll-text-design {
   height: 13.5em;
-	  margin: 0px;
-	  padding: 0px;
-	  width: 100%;
-  
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
 }
-
 
 .inner-scroll-text-style {
   list-style-type: none;
@@ -131,7 +119,6 @@ $jumbotron-heading-color: $overall-text-color;
   width: 100%;
 }
 
-
 .scroll-animation-text {
   animation-name: titleflip;
   animation: titleflip 5s ease-in-out infinite;
@@ -140,9 +127,10 @@ $jumbotron-heading-color: $overall-text-color;
 }
 
 @-webkit-keyframes titleflip {
-  0%, 20% {
-    -webkit-transform: translate(0px, -19.50em);
-    -moz-transform: translate(0px, -19.50em);
+  0%,
+  20% {
+    -webkit-transform: translate(0px, -19.5em);
+    -moz-transform: translate(0px, -19.5em);
   }
   20%,
   40% {
@@ -166,14 +154,9 @@ $jumbotron-heading-color: $overall-text-color;
   }
   100%,
   0% {
-    -webkit-transform: translate(0px, -19.50em);
-    -moz-transform: translate(0px, -19.50em);
+    -webkit-transform: translate(0px, -19.5em);
+    -moz-transform: translate(0px, -19.5em);
   }
-}
-
-
-.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-  background-color: #8064A2 !important;
 }
 
 

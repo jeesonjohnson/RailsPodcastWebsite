@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   root "welcome#home"
   get '/app', to: 'podcastapp#home'
-
+  get '/users', to: 'podcastapp#home'
 
   
 end

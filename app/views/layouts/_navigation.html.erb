@@ -1,3 +1,4 @@
+<%- if controller_name != 'podcastapp' %>
 <nav class="navbar navbar-default container bold-text-nav">
   <div class="container-fluid ">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -22,3 +23,12 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav> 
+<% else %>
+
+<div class="generic"><h1>Welcome HOme</h1>
+
+<%= link_to "logout", destroy_user_session_path, method: :delete %>
+
+</div>
+
+<%end%>

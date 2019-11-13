@@ -2,32 +2,27 @@
 <html>
   <head>
     <title>Podly</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %> <%= csp_meta_tag %> 
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
-  <%= render 'layouts/navigation' %>
-    <br/>
-    <div class="container">
 
-      <% flash.each do |name, msg| %>
-    
-
-    <div class="alert alert-warning alert-dismissible" role="alert">
-  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-  <strong> <%= msg %></strong>
-</div>
-      
-    
-    <% end %>
-
-      <%= yield %>
+      <%- if controller_name != 'podcastapp' %>
+      <%= render 'layouts/navigation' %> 
+      <br />
+        <div class="container">
+          <%= render 'layouts/errorflash' %>
+          <%= yield %>
       </div>
+      <%= render 'layouts/footer' %>
+    <% else %>
 
-  <%= render 'layouts/footer' %>
+
+  <%= render 'layouts/applayout' %>
+
+
+
+
+    <% end %> 
   </body>
 </html>

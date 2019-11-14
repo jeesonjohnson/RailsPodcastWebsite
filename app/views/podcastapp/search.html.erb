@@ -1,0 +1,24 @@
+
+<div  class="jumbotron" style="">
+    <h1 class="text-center">Search for your favourite podcasts</h1>
+    <div id="pod-search-div">
+         <%= form_tag "#", method: :get, id: "podcast-lookup-form" do%>
+            <div class="form-group row no-padding text-center col-md-12">
+                    <div class="col-md-10">
+                        <%= text_field_tag :podcast, params[:podcast], placeholder: "Enter podcast name :)", autofocus: true, class: "form-control search-box input-lg"%>
+                    </div>
+                    
+                    <div class="col-md-2">
+                        <%= button_tag(type: :submit, class: "btn btn-lg btn-success" ) do %>
+                            <i class="fa fa-search"></i>  Search all podcasts
+                        <%end%>
+                    
+                    </div>
+                </div>
+            </div>
+        <% end %>
+    </div>
+
+
+
+</div>

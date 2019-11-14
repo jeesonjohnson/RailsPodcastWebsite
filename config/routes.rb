@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   get '/app', to: 'podcastapp#home'
   get '/users', to: 'podcastapp#home'
 
+  get '/app/search', to: 'podcastapp#search'
+
   
 end

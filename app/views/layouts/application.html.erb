@@ -2,27 +2,25 @@
 <html>
   <head>
     <title>Podly</title>
-    <%= csrf_meta_tags %> <%= csp_meta_tag %> 
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %> <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
 
-      <%- if controller_name != 'podcastapp' %>
-      <%= render 'layouts/navigation' %> 
-      <br />
-        <div class="container">
-          <%= render 'layouts/errorflash' %>
-          <%= yield %>
+    <%- if controller_name != 'podcastapp' %>
+      <%= render 'layouts/navigation' %>
+      <br/>
+      <div class="container">
+        <%= render 'layouts/errorflash' %>
+        <%= yield %>
       </div>
       <%= render 'layouts/footer' %>
     <% else %>
 
+      <%= render 'layouts/applayout' %>
 
-  <%= render 'layouts/applayout' %>
-
-
-
-
-    <% end %> 
+    <% end %>
   </body>
 </html>

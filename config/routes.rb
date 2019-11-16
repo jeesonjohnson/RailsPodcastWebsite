@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   root "welcome#home"
 
   get '/app', to: 'podcastapp#home'
-  
+
   get '/app/search', to: 'podcastapp#search'
 
   get 'searchpodcasts', to: 'podcast#search'
 
-  
+
 end

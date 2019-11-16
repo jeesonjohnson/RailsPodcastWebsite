@@ -1,14 +1,9 @@
 class PodcastappController < ApplicationController
-    before_action :authenticate_user!
-    
-    def home
-        
-    end
+  before_action :authenticate_user!
 
-    def search
+  def home
+  end
 
-    end
-
-
-
+  def search
+  end
 end

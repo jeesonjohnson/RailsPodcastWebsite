@@ -1,41 +1,60 @@
-
-	<div class="sidebar-style">
-	    <div class="sidebar">
-        <%= image_tag('logo.png', width:"80px", height:"80px", class:"pull-left") %>
-	        <h1 style="text-align:center;font-weight: bold;">Podly</h1><br/>
-	        <ul>
-	            <li><a href="#">Home</a></li>
-	            <li><a href="#">Search</a></li>
-	            <li><a href="#">My Profile</a></li>
-	            <li><%= link_to "Search", app_search_path %></li>
-	            <li><a href="#">PLaceholder</a></li>
-				<li><a href="#">PLaceholder</a></li>
-	            <li><a href="#">PlaceHolder</a></li>
-	        </ul>
-        <div class="logout-side-style">
-          <%= link_to "logout", destroy_user_session_path, method: :delete %>
-      </div>
-            
-	    </div>
-	    <div class="main_content">
-                <div class="container" id="main-document-class">
-                    <%= render 'layouts/errorflash' %>
-                    <%= yield %>
-                
-                </div>
-			</div>
+<div class="sidebar-style">
+	<div class="sidebar">
+		<%= image_tag('logo.png', width:"80px", height:"80px", class:"pull-left") %>
+		<h1 style="text-align:center;font-weight: bold;">Podly</h1><br/>
+		<ul>
+			<li>
+				<a href="#">Home</a>
+			</li>
+			<li>
+				<a href="#">Search</a>
+			</li>
+			<li><%= link_to "searh", app_search_path, method: :get, id: "podcast-lookup-form" %></li>
+			<li>
+				<a href="#">PLaceholder</a>
+			</li>
+			<li>
+				<a href="#">PLaceholder</a>
+			</li>
+			<li>
+				<a href="#">PlaceHolder</a>
+			</li>
+		</ul>
+		<div class="logout-side-style">
+			<%= link_to "logout", destroy_user_session_path, method: :delete %>
+		</div>
 
 	</div>
+	<div class="main_content">
+		<div class="container" id="main-document-class">
+			<%= render 'layouts/errorflash' %>
+			<%= yield %>
 
+		</div>
+	</div>
+
+</div>
 
 <div class="main-bottom-navigation">
-    <div class="bottom-nav-style">
-        <ul>
-            <li><a href="#"></a><p>Placeholder</p></li>
-            <li><a href="#"></a><p>Placeholeder 2</p></li>
-            <li><a href="#"></a><p>PlaceHolder 3</p></li>
-            <li><a href="#"></a><p>PlaceHOlder 4</p></li>
-        </ul>
-    </div>
-    
+	<div class="bottom-nav-style">
+		<ul>
+			<li>
+				<a href="#"></a>
+				<p>Placeholder</p>
+			</li>
+			<li>
+				<a href="#"></a>
+				<p>Placeholeder 2</p>
+			</li>
+			<li>
+				<a href="#"></a>
+				<p>PlaceHolder 3</p>
+			</li>
+			<li>
+				<a href="#"></a>
+				<p>PlaceHOlder 4</p>
+			</li>
+		</ul>
+	</div>
+
 </div>

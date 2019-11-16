@@ -1,32 +1,25 @@
-    <% if @podcast%>
-        
-        <% if @podcast["results"].size>0 %>
-        
-        
-        
-            <% @podcast["results"].size.times do |podIndex| %>
+<% if @podcast%>
 
-            <div class="jumbotron container pod-item">
-                <%= image_tag(@podcast["results"][podIndex]["artworkUrl600"], {:class => "podcast-logo pull-left"}) %>
-                <h2 class="text-center pod-table-heading"><%= @podcast["results"][podIndex]["trackName"] %></h2>
-                <h4 class="text-center"><%= @podcast["results"][podIndex]["artistName"] %></h4>
-                <p><a class="btn btn-primary btn-lg pull-right podcast-button-style" href="#" role="button">Find out more!</a></p>
-            </div>
-                
-                
-                <%end%>
-                
-                    
-                <% else %>
-                <div class="well">
-                        <h1 class="text-center" style="color:black">No such podcasts exsist! :(</h1>
-                </div>
+  <% if @podcast["results"].size>0 %>
 
-                <% end %>
+    <% @podcast["results"].size.times do |podIndex| %>
 
-        
-        
-        
+      <div class="jumbotron container pod-item">
+        <%= image_tag(@podcast["results"][podIndex]["artworkUrl600"], {:class => "podcast-logo pull-left"}) %>
+        <h2 class="text-center pod-table-heading"><%= @podcast["results"][podIndex]["trackName"] %></h2>
+        <h4 class="text-center"><%= @podcast["results"][podIndex]["artistName"] %></h4>
+        <p>
+          <a class="btn btn-primary btn-lg pull-right podcast-button-style" href="#" role="button">Find out more!</a>
+        </p>
+      </div>
+
     <%end%>
 
+  <% else %>
+    <div class="well">
+      <h1 class="text-center" style="color:black">No such podcasts exsist! :(</h1>
+    </div>
 
+  <% end %>
+
+<%end%>

@@ -3,10 +3,12 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root "welcome#home"
-  get '/app', to: 'podcastapp#home'
-  get '/users', to: 'podcastapp#home'
 
+  get '/app', to: 'podcastapp#home'
+  
   get '/app/search', to: 'podcastapp#search'
+
+  get 'searchpodcasts', to: 'podcast#search'
 
   
 end

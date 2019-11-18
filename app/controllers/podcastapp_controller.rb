@@ -6,4 +6,10 @@ class PodcastappController < ApplicationController
 
   def search
   end
+
+  def findEpisode
+    @episode=Episode.episode_search(params[:itunes_id]);
+  end
+
+  
 end

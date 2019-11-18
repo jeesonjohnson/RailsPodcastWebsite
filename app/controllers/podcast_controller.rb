@@ -22,4 +22,7 @@ class PodcastController < ApplicationController
       format.js { render partial: 'podcastapp/result' }
     end
   end
+
+  
+
 end

@@ -1,15 +1,15 @@
 <div class="sidebar-style">
 	<div class="sidebar">
 		<%= image_tag('logo.png', width:"80px", height:"80px", class:"pull-left") %>
-		<h1 style="text-align:center;font-weight: bold;">Podly</h1><br/>
+		<h1 class="app-title">Podly</h1><br/>
 		<ul>
 			<li>
-				<a href="#">Home</a>
+				<%= link_to "Search", app_path, method: :get, id: "podcast-lookup-form" %>
 			</li>
 			<li>
-				<a href="#">Search</a>
+				<a href="#">PLaceholder</a>
 			</li>
-			<li><%= link_to "searh", app_search_path, method: :get, id: "podcast-lookup-form" %></li>
+			<li><%= link_to "Search", app_search_path, method: :get, id: "podcast-lookup-form" %></li>
 			<li>
 				<a href="#">PLaceholder</a>
 			</li>

@@ -1,0 +1,9 @@
+<% if @episode.present? %>
+  <div class="container">
+    <h1 class="text-center"><%= @episode.title %></h1>
+
+  </div>
+<% else %>
+  <h1>That podcast is not recognised
+  </h1>
+<%end%>

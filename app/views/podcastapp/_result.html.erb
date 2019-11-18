@@ -9,7 +9,7 @@
         <h2 class="text-center pod-table-heading"><%= @podcast["results"][podIndex]["trackName"] %></h2>
         <h4 class="text-center"><%= @podcast["results"][podIndex]["artistName"] %></h4>
         <p>
-          <a class="btn btn-primary btn-lg pull-right podcast-button-style" href="#" role="button">Find out more!</a>
+          <%= link_to "Find out more!", podcast_path(:itunes_id => @podcast["results"][podIndex]["trackId"]), method: :get, id: "pod-details", class: "btn btn-primary btn-lg pull-right podcast-button-style"%>
         </p>
       </div>
 

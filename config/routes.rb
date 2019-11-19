@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   get '/searchpodcasts', to: 'podcast#search'
 
   get '/podcast', to: 'podcastapp#findEpisode'
+
+  get '/playaudio', to: 'podcast#playaudio'
 end

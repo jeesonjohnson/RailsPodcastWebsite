@@ -1,9 +1,32 @@
 <% if @episode.present? %>
-  <div class="container">
-    <h1 class="text-center"><%= @episode.title %></h1>
+
+  <div class="jumbotron container pod-item podcast-episode-jumbotron">
+    <%= image_tag(@episode.image.url, {:class => "podcast-logo pull-left"}) %>
+    <h1 class="text-center pod-table-heading"><%= @episode.title %></h1>
+    <h4 class="text-center"><%= raw @episode.description %></h4>
+    <%= link_to "Go to website", "http://"+@episode.url, :target => "_blank", class: "text-center website-link-style", style: "padding-left:20px;" %>
+
+    <a class="btn btn-primary btn-lg pull-right podcast-button-style">Subscribe</a>
 
   </div>
+  <br/>
+
+  <% @episode.entries.size.times do |podIndex| %>
+  <div class="episode-list-style jumbotron" style="width:1170px">
+      <div style="flex:1">
+
+        <%=link_to "", playaudio_path(:audioUrl => @episode.entries[podIndex].enclosure_url),remote: true, method: :get, class: "glyphicon glyphicon-play-circle", style: "font-size: 200px;"%>
+      </div>
+      <div style="flex:4">
+        <h2 id="episode-title"><%=@episode.entries[podIndex].title%></h2>
+        <p style="padding-left:80px"><%= @episode.entries[podIndex].summary%></p>
+      </div>
+    </div>
+    <br/>
+  <% end %>
+
+</div>
 <% else %>
-  <h1>That podcast is not recognised
-  </h1>
+<h1>That podcast is not recognised
+</h1>
 <%end%>

@@ -1,0 +1,41 @@
+$overall-background: #0c0c0d;
+$overall-text-color: #ffff;
+$overall-secondary-yellow: #ffbf29; //#3E3E55;
+$logo-highlight-color: #47cf73; //#00D083;
+$nav-bottom-bg-color: #242423;
+$nav-side-bg-color: #1F1F1F;
+$green-title-color: #47cf73; //
+
+.podcast-episode-jumbotron {
+  background-color: $nav-side-bg-color !important;
+
+  h1 {
+    color: $green-title-color !important;
+    font-weight: bold !important;
+  }
+}
+
+
+.website-link-style{
+  font-size: 18px !important;
+  font-weight: 500;
+  text-decoration: none;
+  color: $overall-secondary-yellow !important;
+}
+.website-link-style:hover{
+  font-size: 18px !important;
+  font-weight: bold;
+  text-decoration: none;
+  color: $overall-secondary-yellow;
+}
+.episode-list-style{
+  display:flex;
+  flex-wrap: wrap;
+  background-color: $nav-side-bg-color !important;
+
+}
+#episode-title{
+  font-weight: 700;
+  padding-left: 50px !important;
+  color: $overall-secondary-yellow !important;
+}

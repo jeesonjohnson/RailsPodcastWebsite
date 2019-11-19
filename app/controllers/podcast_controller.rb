@@ -25,7 +25,6 @@ class PodcastController < ApplicationController
 
 
   def playaudio
-    @episode = Episode.audioUrl(params[:audioUrl])
     respond_to do |format|
       format.js { render partial: 'podcastapp/audioplayer' }
     end

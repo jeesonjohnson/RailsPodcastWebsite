@@ -1,21 +1,15 @@
-<% if @episode.present? %>
 
   <div style="padding-top:15px;">
     <div style="display: flex;">
-      <div style="flex:1;">Podcast Titsshajahd kja</div>
+      <div style="flex:1;"><h3>Podcast Title to be insereted</h3></div>
       <div style="flex:3" id="audioplayer">
+        <audio controls="controls" style="width:100%;" autoplay loop>
+			<source src="<%= params["audioUrl"] %>" type="audio/ogg"/>
+			<source src="<%= params["audioUrl"] %>" type="audio/mpeg"/>
+			Your browser does not support the audio element.
+		</audio>
 
-
-        <%= audio_tag @episode.audioUrl, class: "audio-play" %>
-        <!-- <audio controls="controls" style="width:100%;">
-          <source src="<%= @episode.audioUrl%>" type="audio/ogg"/>
-          <source src="<%= @episode.audioUrl%>" type="audio/mpeg"/>
-          Your browser does not support the audio element.
-        </audio> -->
       </div>
 
     </div>
   </div>
-<% else %>
-  <h3 class="text-center">Play a podcast episode :)</h3>
-<% end %>

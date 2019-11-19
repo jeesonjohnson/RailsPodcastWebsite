@@ -11,10 +11,6 @@ class Episode < ApplicationRecord
     result
   end
 
-  def self.audioUrl(audioUrl)
-    audioUrl
-  end
-
 
   private
 

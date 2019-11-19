@@ -15,6 +15,10 @@ $green-title-color: #47cf73; //
   }
 }
 
+.pod-description-style{
+  color:grey !important;
+}
+
 
 .website-link-style{
   font-size: 18px !important;
@@ -38,4 +42,15 @@ $green-title-color: #47cf73; //
   font-weight: 700;
   padding-left: 50px !important;
   color: $overall-secondary-yellow !important;
+}
+
+.play-icon-style{
+  font-size: 200px !important;;
+  text-decoration: none !important;;
+}
+
+.play-icon-style:hover{
+  font-size: 200px !important;
+  text-decoration: none !important;
+  color: $logo-highlight-color;
 }

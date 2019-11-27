@@ -16,8 +16,7 @@
   <% @podcast.entries.size.times do |podIndex| %>
   <div class="episode-list-style jumbotron" style="width:1170px">
       <div style="flex:1">
-
-        <%=link_to "", playaudio_path(:audioUrl => @podcast.entries[podIndex].enclosure_url),remote: true, method: :get, class: "glyphicon glyphicon-play-circle play-icon-style", method: :post%>
+        <%=link_to "", playaudio_path(:audioUrl => @podcast.entries[podIndex].enclosure_url, :title=>@podcast.title,:image_url=>@podcast.image.url),remote: true, method: :get, class: "glyphicon glyphicon-play-circle play-icon-style"%>
       </div>
       <div style="flex:4">
         <h2 id="episode-title"><%=@podcast.entries[podIndex].title%></h2>

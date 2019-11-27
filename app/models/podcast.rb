@@ -5,6 +5,8 @@ require 'json'
 require 'feedjira'
 
 class Podcast < ApplicationRecord
+  has_many :user_podcast
+  has_many :users, through: :user_podcasts
   def self.new_podcast_search(search_term)
     puts 'HASDHJJAHDGASHGDJHASHKJASHJASHKJASHJASHKASDHDKASHDASKHDASKJDHASKJDHASKDSHKASHKASJHDKASHDASKHDASKDHASDASHKJASHDKASHDASKJHDASKJ'
     itunesURL = 'https://itunes.apple.com/search?term='
@@ -20,6 +22,20 @@ class Podcast < ApplicationRecord
     result
   end
 
+  def self.add_podcast_to_db(itunes_id, image_url, podcast_name)
+    @podcast = Podcast.where('itunes_id = ' + itunes_id)[0]
+    if @podcast.blank?
+      puts "NEW PODCAST ADDDEDEDEDEDEDEDDEDEDE OT H SERVER¬!!!!!!!"
+      @podcast = Podcast.create(name: podcast_name, author: 'testAUthor', rsslink: episode_feed_finder(itunes_id), itunes_id: itunes_id, image_url: image_url)
+      @podcast.save
+      return @podcast
+    else
+      @podcast=Podcast.new(name:@podcast.name,author:@podcast.author,rsslink:@podcast.rsslink, image_url: @podcast.image_url, itunes_id: @podcast.itunes_id)
+    end
+  end
+
+
+
   private
 
   def self.episode_feed_finder(itunes_id)
@@ -32,6 +48,5 @@ class Podcast < ApplicationRecord
   def self.episode_parser(feed_url)
     xml = RestClient.get(feed_url)
     feed = Feedjira::Feed.parse_with Feedjira::Parser::ITunesRSS, xml
-
   end
 end

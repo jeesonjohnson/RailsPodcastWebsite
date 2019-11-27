@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_13_193741) do
+ActiveRecord::Schema.define(version: 2019_11_26_165319) do
 
   create_table "podcasts", force: :cascade do |t|
     t.string "name"
@@ -18,6 +18,17 @@ ActiveRecord::Schema.define(version: 2019_11_13_193741) do
     t.string "rsslink"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "image_url"
+    t.text "itunes_id"
+  end
+
+  create_table "user_podcasts", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "podcast_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["podcast_id"], name: "index_user_podcasts_on_podcast_id"
+    t.index ["user_id"], name: "index_user_podcasts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|

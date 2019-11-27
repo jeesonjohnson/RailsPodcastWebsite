@@ -13,4 +13,6 @@ Rails.application.routes.draw do
   get '/podcast', to: 'podcastapp#findEpisode'
 
   get '/playaudio', to: 'podcast#playaudio'
+
+  resources :user_podcasts, only: [:create]
 end

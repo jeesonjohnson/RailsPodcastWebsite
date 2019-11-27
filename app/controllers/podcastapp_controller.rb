@@ -8,7 +8,11 @@ class PodcastappController < ApplicationController
   end
 
   def findEpisode
-    @podcast=Podcast.episode_search(params[:itunes_id]);
+    if(!params[:itunes_id].blank?)
+    @podcast=Podcast.episode_search(params[:itunes_id])
+  else
+    flash[:error]="Invalid podcast page"
+  end
 
   end
 

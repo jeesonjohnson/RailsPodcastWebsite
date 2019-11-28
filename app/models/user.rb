@@ -4,17 +4,16 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-
   has_many :user_podcasts
   has_many :podcasts, through: :user_podcasts
 
-  def podcast_already_subscribed(itunes_id,user_id)
+  def podcast_already_subscribed(itunes_id, user_id)
     @podcast = Podcast.where('itunes_id = ' + itunes_id)[0]
-    if(@podcast.blank?)
+    if @podcast.blank?
       return false
     else
-      userpod=UserPodcast.where('podcast_id = ' + @podcast.id.to_s + " AND user_id = "+user_id.to_s)[0]
-      if(userpod.blank?)
+      userpod = UserPodcast.where('podcast_id = ' + @podcast.id.to_s + ' AND user_id = ' + user_id.to_s)[0]
+      if userpod.blank?
         return false
       else
         return true
@@ -22,9 +21,13 @@ class User < ApplicationRecord
     end
   end
 
-
   def self.get_user_podcasts(user_id)
-    return UserPodcast.where("user_id = "+user_id.to_s)
+    userPods = UserPodcast.where('user_id = ' + user_id.to_s)
+    podcasts = []
+    userPods.size.times do |podIndex|
+      pod=Podcast.where("id = " + userPods[podIndex]["id"].to_s)[0]
+      podcasts.push(pod)
+    end
+    return podcasts
   end
-
 end

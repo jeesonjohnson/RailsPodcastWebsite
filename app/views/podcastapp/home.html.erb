@@ -5,38 +5,33 @@
     <div style="flex:2">
       <h2 id="home-episode-title" class="text-center">Your Podcasts</h2>
       <div class="flex-container-homepage" style="flex:2;">
+        <% if(@userPodcasts.size >0)%>
+          <% @userPodcasts.size.times do |podIndex| %>
+            <div class="flex-container-homepage-item ">
+
+              <%= link_to podcast_path(:itunes_id => @userPodcasts[podIndex]["itunes_id"]) do %>
+              <%= image_tag(@userPodcasts[podIndex]["image_url"], {:class => "home-container-image"}) %>
+            <% end %>
+          </div>
+        <%end%>
+      <%else %>
         <div class="flex-container-homepage-item ">
-          <img class="home-container-image " src="https://images.unsplash.com/reserve/Af0sF2OS5S5gatqrKzVP_Silhoutte.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2074&q=80">
+          <h4>It looks like you havent subscribed to any podcasts, try searching for them.</h4>
         </div>
-        <% if (@userPodcasts.size == 0) %>
-        <div class="flex-container-homepage-item ">
-          <h1>Yes</h1>
-        </div>
-
-        <% end %>
-
-
-
-
-        <div class="flex-container-homepage-item ">
-          <img class="home-container-image " src="https://images.unsplash.com/reserve/Af0sF2OS5S5gatqrKzVP_Silhoutte.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2074&q=80">
-        </div>
-        <div class="flex-container-homepage-item ">
-          <img class="home-container-image " src="https://images.unsplash.com/reserve/Af0sF2OS5S5gatqrKzVP_Silhoutte.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2074&q=80">
-        </div>
-
-      </div>
-
-    </div>
-    <div style="flex:1;background-color:grey;">
-      <h2 id="home-episode-title" class="text-center">Trending podcasts</h2>
-      <div class="top-podcasts-style">
-        <h3 style="flex:1">test</h3>
-        <h3 style="flex:1">test</h3>
-
-      </div>
+      <% end %>
 
     </div>
 
   </div>
+  <div style="flex:1;background-color:grey;">
+    <h2 id="home-episode-title" class="text-center">Trending podcasts</h2>
+    <div class="top-podcasts-style">
+      <h3 style="flex:1">test</h3>
+      <h3 style="flex:1">test</h3>
+
+    </div>
+
+  </div>
+
+</div>
 </div>

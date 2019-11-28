@@ -1,0 +1,61 @@
+$overall-secondary-yellow: #ffbf29;
+$nav-bottom-bg-color: #242423;
+$nav-side-bg-color: #1F1F1F;
+$overall-background: #0c0c0d;
+$logo-highlight-color: #47cf73;
+
+.flex-container-homepage {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  padding-left:20px;
+  padding-bottom:20px;
+}
+
+.overall-home-styling{
+  background-color: $overall-background;
+  box-shadow: none !important;
+  border-color: $overall-background;
+}
+
+
+.flex-container-homepage-item {
+  flex: 1;
+  flex-wrap: wrap;
+  padding: 8px 6px;
+}
+
+.home-container-image {
+  border-radius: 20px !important;
+  width: 200px;
+  height: 180px;
+}
+
+#home-episode-title {
+  font-weight: 700;
+  font-size: 30px;
+    color:$logo-highlight-color;
+
+}
+
+#podcast-home-title{
+  font-weight: bold;
+  font-size: 100px;
+
+}
+
+
+.homepage-outer-flex{
+    display: flex;
+      background-color:$nav-bottom-bg-color;
+
+}
+
+
+.top-podcasts-style{
+  display: flex;
+  flex-direction:column;
+
+  padding-left:20px;
+}

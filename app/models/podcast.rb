@@ -7,6 +7,8 @@ require 'feedjira'
 class Podcast < ApplicationRecord
   has_many :user_podcast
   has_many :users, through: :user_podcasts
+
+
   def self.new_podcast_search(search_term)
     puts 'HASDHJJAHDGASHGDJHASHKJASHJASHKJASHJASHKASDHDKASHDASKHDASKJDHASKJDHASKDSHKASHKASJHDKASHDASKHDASKDHASDASHKJASHDKASHDASKJHDASKJ'
     itunesURL = 'https://itunes.apple.com/search?term='
@@ -30,11 +32,9 @@ class Podcast < ApplicationRecord
       @podcast.save
       return @podcast
     else
-      @podcast=Podcast.new(name:@podcast.name,author:@podcast.author,rsslink:@podcast.rsslink, image_url: @podcast.image_url, itunes_id: @podcast.itunes_id)
+      return @podcast
     end
   end
-
-
 
   private
 

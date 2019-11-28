@@ -22,4 +22,9 @@ class User < ApplicationRecord
     end
   end
 
+
+  def self.get_user_podcasts(user_id)
+    return UserPodcast.where("user_id = "+user_id.to_s)
+  end
+
 end

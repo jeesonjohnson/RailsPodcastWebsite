@@ -2,6 +2,8 @@ class PodcastappController < ApplicationController
   before_action :authenticate_user!
 
   def home
+    @userPodcasts=User.get_user_podcasts(current_user.id)
+    # render json: @userPodcasts
   end
 
   def search

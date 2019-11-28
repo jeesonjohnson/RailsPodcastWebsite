@@ -1,7 +1,42 @@
-<div style="background-color: red; width:100%;">
+<div class="container well overall-home-styling">
+  <h1 id="podcast-home-title" class="text-center">Homepage</h1>
+  <br/>
+  <div class="homepage-outer-flex">
+    <div style="flex:2">
+      <h2 id="home-episode-title" class="text-center">Your Podcasts</h2>
+      <div class="flex-container-homepage" style="flex:2;">
+        <div class="flex-container-homepage-item ">
+          <img class="home-container-image " src="https://images.unsplash.com/reserve/Af0sF2OS5S5gatqrKzVP_Silhoutte.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2074&q=80">
+        </div>
+        <% if (@userPodcasts.size == 0) %>
+        <div class="flex-container-homepage-item ">
+          <h1>Yes</h1>
+        </div>
 
-  <h1>TO BE DONE!!!!!!!!!!!!!!!!!! HOME HOME</h1>
+        <% end %>
 
+
+
+
+        <div class="flex-container-homepage-item ">
+          <img class="home-container-image " src="https://images.unsplash.com/reserve/Af0sF2OS5S5gatqrKzVP_Silhoutte.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2074&q=80">
+        </div>
+        <div class="flex-container-homepage-item ">
+          <img class="home-container-image " src="https://images.unsplash.com/reserve/Af0sF2OS5S5gatqrKzVP_Silhoutte.jpg?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2074&q=80">
+        </div>
+
+      </div>
+
+    </div>
+    <div style="flex:1;background-color:grey;">
+      <h2 id="home-episode-title" class="text-center">Trending podcasts</h2>
+      <div class="top-podcasts-style">
+        <h3 style="flex:1">test</h3>
+        <h3 style="flex:1">test</h3>
+
+      </div>
+
+    </div>
+
+  </div>
 </div>
-
-<button class="popup-trigger" onclick="hi()" data-modal="modal-1">Test generation of podcast</button>

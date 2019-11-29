@@ -14,5 +14,7 @@ Rails.application.routes.draw do
 
   get '/playaudio', to: 'podcast#playaudio'
 
-  resources :user_podcasts, only: [:create]
+  delete '/user_podcasts', to: 'user_podcasts#destroy'
+  post '/user_podcasts', to: 'user_podcasts#create'
+
 end

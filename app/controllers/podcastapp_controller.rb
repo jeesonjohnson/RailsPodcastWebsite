@@ -3,7 +3,8 @@ class PodcastappController < ApplicationController
 
   def home
     @userPodcasts=User.get_user_podcasts(current_user.id)
-    # render json: @userPodcasts
+    @topPodcasts=Podcast.get_top_podcasts()
+
   end
 
   def search

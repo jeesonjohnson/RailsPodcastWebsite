@@ -9,53 +9,100 @@ $logo-highlight-color: #47cf73;
   flex-wrap: wrap;
   flex-flow: row wrap;
   justify-content: space-around;
-  padding-left:20px;
-  padding-bottom:20px;
+  padding-left: 50px;
+  padding-right: 20px;
+  padding-bottom: 20px;
 }
 
-.overall-home-styling{
+.overall-home-styling {
   background-color: $overall-background;
   box-shadow: none !important;
   border-color: $overall-background;
 }
 
-
 .flex-container-homepage-item {
   flex: 1;
   flex-wrap: wrap;
   padding: 8px 6px;
+  justify-content: center;
 }
 
 .home-container-image {
   border-radius: 20px !important;
-  width: 230px;
-  height: 210px;
+  width: 300px;
+  height: 280px;
 }
 
 #home-episode-title {
   font-weight: 700;
   font-size: 30px;
-    color:$logo-highlight-color;
-
+  color: $logo-highlight-color;
 }
 
-#podcast-home-title{
+#podcast-home-title {
   font-weight: bold;
   font-size: 100px;
-
 }
 
-
-.homepage-outer-flex{
-    display: flex;
-      background-color:$nav-bottom-bg-color;
-
-}
-
-
-.top-podcasts-style{
+.homepage-outer-flex {
   display: flex;
-  flex-direction:column;
+  background-color: $nav-bottom-bg-color;
+}
 
-  padding-left:20px;
+.top-podcasts-style {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+#marquee-text {
+  color: $overall-secondary-yellow !important;
+  font-size: 25px;
+  font-weight: bold;
+
+}
+
+.marquee {
+  width: 180px;
+  margin: 0 auto;
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.marquee span {
+  display: inline-block;
+  padding-left: 100%;
+  /* show the marquee just outside the paragraph */
+  animation: marquee 8s linear infinite;
+}
+
+.marquee span:hover {
+  animation-play-state: paused;
+}
+/* Make it move */
+@keyframes marquee {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(-100%, 0);
+  }
+}
+
+// Trending podcasts styling
+
+#trending-overall-tile {
+  display: flex;
+  height: 100px;
+  background-color: $nav-side-bg-color;
+  border-radius: 5px;
+}
+.trending-podcast-image{
+  flex:1;
+  padding:8px 2px;
+  width:100%;
+  height: 100%;
+  border-radius: 20px;
 }

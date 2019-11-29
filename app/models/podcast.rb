@@ -36,6 +36,16 @@ class Podcast < ApplicationRecord
     end
   end
 
+
+
+  def self.get_top_podcasts()
+    response = RestClient.get("https://rss.itunes.apple.com/api/v1/us/podcasts/top-podcasts/all/100/explicit.json")
+    response = JSON.parse(response)["feed"]["results"]
+    return response
+
+
+  end
+
   private
 
   def self.episode_feed_finder(itunes_id)

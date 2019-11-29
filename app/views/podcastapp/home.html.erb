@@ -26,12 +26,51 @@
   <div style="flex:1;background-color:grey;">
     <h2 id="home-episode-title" class="text-center">Trending podcasts</h2>
     <div class="top-podcasts-style">
-      <h3 style="flex:1">test</h3>
-      <h3 style="flex:1">test</h3>
+      <div style="flex:1;padding-right:16px;">
+
+        <% if(@topPodcasts.size >0) %>
+          <% @topPodcasts.size.times do |podIndex| %>
+
+            <div id="trending-overall-tile">
+              <div style="flex:1;padding-top:20px;">
+                <h3 style="padding-left:4px;" id="marquee-text"><%= podIndex+1 %>)</h3>
+
+              </div>
+
+              <div style="flex:3;width:70px;line-height:80px;">
+
+                <%= link_to podcast_path(:itunes_id => @topPodcasts[podIndex]["id"]) do %>
+                <%= image_tag(@topPodcasts[podIndex]["artworkUrl100"], {:class => "trending-podcast-image"}) %>
+              <% end %>
+
+            </div>
+            <div style="flex:6;padding-top:33px;">
+              <p class="marquee">
+                <span id="marquee-text">
+
+
+
+                  <%= link_to @topPodcasts[podIndex]["name"], podcast_path(:itunes_id => @topPodcasts[podIndex]["id"]), { id: 'marquee-text'} %>
+                </span>
+              </p>
+
+            </div>
+
+          </div>
+          <br/>
+
+        <% end %>
+      <% else %>
+        <div class="flex-container-homepage-item ">
+          <h4>There was an error getting the top podcasts:( try reloading</h4>
+        </div>
+      <% end %>
 
     </div>
-
   </div>
+</div>
 
 </div>
 </div>
+
+<br/><br/><br/><br/><br/><br/><br/>

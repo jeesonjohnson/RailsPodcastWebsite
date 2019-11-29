@@ -4,11 +4,24 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
 
+  <h3><%= f.label :first_name %></h3>
+  <div class="input-group input-group-lg">
+  <span class="input-group-addon" id="sizing-addon1"><%= f.label :first_name %></span>
+  <%= f.text_field :first_name, autofocus: true, autocomplete: "First Name", class: "form-control", style: "width:595px; height:50px"%>
+  </div><br />
+
+  <h3><%= f.label :last_name %></h3>
+  <div class="input-group input-group-lg">
+  <span class="input-group-addon" id="sizing-addon1"><%= f.label :last_name %></span>
+  <%= f.text_field :last_name, autocomplete: "Last name", class: "form-control", style: "width:595px; height:50px"%>
+  </div><br />
+
   <h3><%= f.label :email %></h3>
   <div class="input-group input-group-lg">
-  <span class="input-group-addon" id="sizing-addon1">Email</span>
-  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", style: "width:640px; height:50px"%>
+  <span class="input-group-addon" id="sizing-addon1"><%= f.label :last_name %></span>
+  <%= f.email_field :email, autocomplete: "email", class: "form-control", style: "width:595px; height:50px"%>
   </div><br />
+
 
   <h3><%= f.label :password %>
   <small><% if @minimum_password_length %>
@@ -18,7 +31,7 @@
 
   <div class="input-group input-group-lg">
   <span class="input-group-addon" id="sizing-addon1">Password </span>
-  
+
     <%= f.password_field :password, autocomplete: "new-password",class: "form-control", style: "width:600px;height:50px" %>
 
   </div><br />

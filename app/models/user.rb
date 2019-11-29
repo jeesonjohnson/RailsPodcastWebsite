@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :user_podcasts
   has_many :podcasts, through: :user_podcasts
+  validates :first_name, presence:true
+  validates :last_name, presence:true
 
   def podcast_already_subscribed(itunes_id, user_id)
     @podcast = Podcast.where('itunes_id = ' + itunes_id)[0]
@@ -29,5 +31,11 @@ class User < ApplicationRecord
       podcasts.push(pod)
     end
     return podcasts
+  end
+
+
+  def full_user_name
+    return "#{first_name} #{last_name}".strip if (first_name || last_name)
+    return "Anonymous"
   end
 end

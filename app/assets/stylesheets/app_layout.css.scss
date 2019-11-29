@@ -1,12 +1,14 @@
 $nav-bottom-bg-color: #242423;
 $nav-side-bg-color: #1F1F1F;
 $overall-secondary-yellow: #ffbf29;
+$logo-highlight-color: #47cf73;
 
 .app-title {
   text-align: center;
   font-weight: bold;
 }
-.app-title:hover{
+
+.app-title:hover {
   text-align: center;
   font-weight: bold;
   color: $overall-secondary-yellow;
@@ -22,33 +24,33 @@ $overall-secondary-yellow: #ffbf29;
   }
 }
 
+
+
 .sidebar-style .sidebar {
+font-weight: 600;
   width: 220px;
   height: 100%;
   background: $nav-side-bg-color;
-  padding: 30px 0px;
+  padding: 30px 0;
   position: fixed;
 }
 
 .sidebar-style .sidebar ul li {
   list-style-type: none;
-  padding: 11px;
+  padding: 15px;
   border-bottom: 1px solid #bdb8d7;
   border-bottom: 1px solid rgba(0,0,0,0.05);
   border-top: 1px solid rgba(255,255,255,0.05);
-  i{
+
+  i {
     font-size: 20px;
-    padding-right: 5px;
+    padding-right: 10px;
   }
 }
 
 .sidebar-style .sidebar ul li:hover {
   list-style-type: none;
   background-color: grey;
-
-  a {
-    color: #fff;
-  }
 }
 
 .sidebar-style .main_content {
@@ -70,7 +72,6 @@ $overall-secondary-yellow: #ffbf29;
 .bottom-nav-style ul {
   list-style: none;
   padding: 0;
-  color: #fff;
   margin: 0;
 }
 
@@ -98,4 +99,40 @@ $overall-secondary-yellow: #ffbf29;
     font-weight: bold;
     font-size: 20px;
   }
+}
+
+.user-name-side-style {
+  position: absolute;
+  bottom: 130px;
+  left: 0;
+  display: flex;
+  width: 100%;
+  padding: 20px 5px;
+  span {
+    white-space: nowrap;
+     width: 100%;
+     font-size: 20px;
+     overflow: hidden;
+     font-weight: bold;
+     padding-left: 10px;
+     padding-right: 5px;
+     text-overflow: ellipsis;
+     a:hover{
+       text-decoration: none;
+       color:$logo-highlight-color;
+     }
+  }
+}
+
+
+#user-name-layout{
+  white-space: nowrap;
+   width: 100%;
+   font-size: 20px;
+   overflow: hidden;
+   font-weight: bold;
+   padding-left: 10px;
+   padding-right: 5px;
+   text-overflow: ellipsis;
+   color:red;
 }

@@ -7,6 +7,10 @@ require 'feedjira'
 class Podcast < ApplicationRecord
   has_many :user_podcast
   has_many :users, through: :user_podcasts
+  validates :itunes_id, presence:true, uniqueness: true
+  validates :name, presence:true
+  validates :rsslink, presence:true, uniqueness:true
+
 
 
   def self.new_podcast_search(search_term)

@@ -19,8 +19,12 @@
 				<a href="#">PlaceHolder</a>
 			</li>
 		</ul>
+		<div class="user-name-side-style">
+			<i class="glyphicon glyphicon-user" style="padding-top:5px;font-size:20px;"></i>
+			<span><%= link_to current_user.full_user_name.present? ? current_user.full_user_name : current_user.email, edit_user_registration_path(current_user), method: :get%></span>
+		</div>
 		<div class="logout-side-style">
-			<%= link_to "logout", destroy_user_session_path, method: :delete %>
+			<%= link_to "Logout", destroy_user_session_path, method: :delete %>
 		</div>
 
 	</div>
@@ -36,7 +40,7 @@
 
 <div class="main-bottom-navigation">
 	<div class="bottom-nav-style" id="music-player-controls">
-			<h3 class="text-center">Select a podcast to play an episode :)</h3>
+		<h3 class="text-center">Select a podcast to play an episode :)</h3>
 	</div>
 
 </div>

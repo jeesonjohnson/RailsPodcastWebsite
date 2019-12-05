@@ -24,10 +24,8 @@ $logo-highlight-color: #47cf73;
   }
 }
 
-
-
 .sidebar-style .sidebar {
-font-weight: 600;
+  font-weight: 600;
   width: 220px;
   height: 100%;
   background: $nav-side-bg-color;
@@ -108,31 +106,43 @@ font-weight: 600;
   display: flex;
   width: 100%;
   padding: 20px 5px;
+
   span {
     white-space: nowrap;
-     width: 100%;
-     font-size: 20px;
-     overflow: hidden;
-     font-weight: bold;
-     padding-left: 10px;
-     padding-right: 5px;
-     text-overflow: ellipsis;
-     a:hover{
-       text-decoration: none;
-       color:$logo-highlight-color;
-     }
+    width: 100%;
+    font-size: 20px;
+    overflow: hidden;
+    font-weight: bold;
+    padding-left: 10px;
+    padding-right: 5px;
+    text-overflow: ellipsis;
+    color: $logo-highlight-color;
+
+    a {
+      color: $logo-highlight-color;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
   }
 }
 
 
-#user-name-layout{
+#audio_player_title{
+    text-overflow: ellipsis;
+}
+
+
+
+#user-name-layout {
   white-space: nowrap;
-   width: 100%;
-   font-size: 20px;
-   overflow: hidden;
-   font-weight: bold;
-   padding-left: 10px;
-   padding-right: 5px;
-   text-overflow: ellipsis;
-   color:red;
+  width: 100%;
+  font-size: 20px;
+  overflow: hidden;
+  font-weight: bold;
+  padding-left: 10px;
+  padding-right: 5px;
+  text-overflow: ellipsis;
+  color: red;
 }

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class PodcastController < ApplicationController
   def search
     # if(params[:podcast].present?)
@@ -19,14 +17,14 @@ class PodcastController < ApplicationController
     #         format.js {render layout: false} # Add this line to you respond_to block
     # end
     respond_to do |format|
-      format.js { render partial: 'podcastapp/result' }
+      format.js { render partial: 'result' }
     end
   end
 
 
   def playaudio
     respond_to do |format|
-      format.js { render partial: 'podcastapp/audioplayer' }
+      format.js { render partial: 'audioplayer' }
     end
 
   end

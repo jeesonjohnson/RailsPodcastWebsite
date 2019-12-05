@@ -5,23 +5,20 @@
 		<ul>
 			<li>
 				<i class="glyphicon glyphicon-home"></i>
-				<%= link_to "Home", app_path, method: :get, id: "podcast-lookup-form"%>
+				<%= link_to "Home", app_path, method: :get%>
 			</li>
 			<li>
-				<i class="glyphicon glyphicon-zoom-in"></i><%= link_to "Search", app_search_path, method: :get, id: "podcast-lookup-form" %></li>
+				<i class="glyphicon glyphicon-zoom-in"></i><%= link_to "Search Pods", app_search_path, method: :get %></li>
 			<li>
-				<a href="#">PLaceholder</a>
+				<i class="glyphicon glyphicon-thumbs-up"></i><%= link_to "Friends", app_friends_path, method: :get %></li>
 			</li>
 			<li>
-				<a href="#">PLaceholder</a>
-			</li>
-			<li>
-				<a href="#">PlaceHolder</a>
+				<i class="glyphicon glyphicon-flag"></i><%= link_to "Find Friends", app_findfriends_path, method: :get %></li>
 			</li>
 		</ul>
 		<div class="user-name-side-style">
 			<i class="glyphicon glyphicon-user" style="padding-top:5px;font-size:20px;"></i>
-			<span><%= link_to current_user.full_user_name.present? ? current_user.full_user_name : current_user.email, edit_user_registration_path(current_user), method: :get%></span>
+			<span ><%= link_to current_user.full_user_name.present? ? current_user.full_user_name : current_user.email, edit_user_registration_path(current_user), method: :get%></span>
 		</div>
 		<div class="logout-side-style">
 			<%= link_to "Logout", destroy_user_session_path, method: :delete %>

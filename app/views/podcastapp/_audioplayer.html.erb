@@ -1,8 +1,8 @@
 
   <div style="padding-top:15px;">
     <div style="display: flex;">
-      <div style="flex:1;"><h3 style="font-weight:bold;"><%=params["title"]%></h3></div>
-      <div style="flex:3;padding-top:10px;padding-right:20px;" id="audioplayer" class="center">
+      <div style="flex:1;"><h3 style="font-weight:bold;" id="#audio_player_title"><%=params["title"]%></h3></div>
+      <div style="flex:3;padding-top:10px;padding-right:20px;" class="center">
         <audio controls="controls" style="width:100%;" autoplay loop>
 			<source src="<%= params["audioUrl"] %>" type="audio/ogg"/>
 			<source src="<%= params["audioUrl"] %>" type="audio/mpeg"/>

@@ -14,7 +14,6 @@ class Podcast < ApplicationRecord
 
 
   def self.new_podcast_search(search_term)
-    puts 'HASDHJJAHDGASHGDJHASHKJASHJASHKJASHJASHKASDHDKASHDASKHDASKJDHASKJDHASKDSHKASHKASJHDKASHDASKHDASKDHASDASHKJASHDKASHDASKJHDASKJ'
     itunesURL = 'https://itunes.apple.com/search?term='
     itunesURL = itunesURL + search_term.downcase.tr(' ', '+') + '&entity=podcast'
     response = RestClient.get(itunesURL)
@@ -31,7 +30,6 @@ class Podcast < ApplicationRecord
   def self.add_podcast_to_db(itunes_id, image_url, podcast_name)
     @podcast = Podcast.where('itunes_id = ' + itunes_id)[0]
     if @podcast.blank?
-      puts "NEW PODCAST ADDDEDEDEDEDEDEDDEDEDE OT H SERVER¬!!!!!!!"
       @podcast = Podcast.create(name: podcast_name, author: 'testAUthor', rsslink: episode_feed_finder(itunes_id), itunes_id: itunes_id, image_url: image_url)
       @podcast.save
       return @podcast

@@ -17,14 +17,14 @@ class PodcastController < ApplicationController
     #         format.js {render layout: false} # Add this line to you respond_to block
     # end
     respond_to do |format|
-      format.js { render partial: 'result' }
+      format.js { render partial: 'podcastapp/result' }
     end
   end
 
 
   def playaudio
     respond_to do |format|
-      format.js { render partial: 'audioplayer' }
+      format.js { render partial: 'podcastapp/audioplayer' }
     end
 
   end

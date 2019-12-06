@@ -27,5 +27,7 @@ Rails.application.routes.draw do
   get '/profile/:id', to: 'user_podcasts#get_profile', as: 'user_profile'
 
 
+
   resource :friendships, only: [:create,:destroy]
+  get '/searchfriends', to: 'friendships#search_friends'
 end

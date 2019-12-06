@@ -16,7 +16,7 @@ class FriendshipsController < ApplicationController
   end
 
   def destroy
-    @friendship = current_user.friendships.where("friend_id = " + params[:user_id].to_s).first
+    @friendship = current_user.friendships.where('friend_id = ' + params[:user_id].to_s).first
     if @friendship.blank?
       flash[:success] = 'Error! In unfollowing your friend'
     else
@@ -29,6 +29,18 @@ class FriendshipsController < ApplicationController
     puts 'COmpelted'
     respond_to do |format|
       format.js { render partial: 'user_podcasts/user' }
+    end
+  end
+
+  def search_friends
+    if (params[:friend_search_query] == '@') || (params[:friend_search_query].delete(' ') == '')
+      @search = nil
+    else
+      @search = User.search(params[:friend_search_query])
+      puts params[:friend_search_query]
+  end
+    respond_to do |format|
+      format.js { render partial: 'podcastapp/friendsresult' }
     end
   end
 end

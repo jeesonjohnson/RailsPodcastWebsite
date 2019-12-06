@@ -55,7 +55,24 @@ class User < ApplicationRecord
     return !@friend.blank?
   end
 
-
+=begin
+Search query allows for the searching of a new user given a search query that may match the user.
+approprait inplace foramting is done on the serach term to allow efficient searching.
+=end
+  def self.search(term)
+    term.strip!
+    term.downcase!
+    first_name_res=matches("first_name",term)
+    last_name_res=matches("last_name",term)
+    email_res=matches("email",term)
+    result=(first_name_res+last_name_res+email_res).uniq
+    return nil unless result
+    result
+  end
+##Extended functionality of above self.search function. In which a given term is searched for a givne field
+def self.matches(field_name, term)
+  User.where("#{field_name} like ?", "%#{term}%")
+end
 
 
 end

@@ -1,0 +1,18 @@
+<% if(@search) %>
+<h1>hello there</h1>
+
+
+
+<% @search.entries.size.times do |searchIndex| %>
+<div >
+  <h1><%= @search[searchIndex]["first_name"] + @search[searchIndex]["last_name"]%></h1>
+
+  </div>
+
+<% end %>
+
+
+
+<% else %>
+<h3 clas="text-center">Sorry it looks like no elements are present </h3>
+<%end %>

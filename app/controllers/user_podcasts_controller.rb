@@ -13,4 +13,15 @@ class UserPodcastsController < ApplicationController
     @user_podcast.destroy
     flash[:success]="Sucessfully unsubscribed to podcast"
   end
+
+
+  def get_profile
+    @userPodcasts = User.get_user_podcasts(params[:id])
+    @user = User.find(params[:id])
+
+    respond_to do |format|
+      format.js { render partial: 'user_podcasts/user' }
+    end
+    # render json: @user
+  end
 end

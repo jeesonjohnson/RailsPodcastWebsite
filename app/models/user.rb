@@ -1,4 +1,6 @@
+require 'date'
 class User < ApplicationRecord
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -18,7 +20,7 @@ class User < ApplicationRecord
 
 
   def podcast_already_subscribed(itunes_id, user_id)
-    @podcast = Podcast.where('itunes_id = ' + itunes_id)[0]
+    @podcast = Podcast.where('itunes_id = ' + itunes_id.to_s)[0]
     if @podcast.blank?
       return false
     else
@@ -42,6 +44,15 @@ class User < ApplicationRecord
     formatedName=first_name[0].upcase+first_name[1,first_name.size].downcase+" "+last_name[0].upcase+last_name[1,last_name.size].downcase
     return formatedName.strip if (first_name || last_name)
     return "Anonymous"
+  end
+
+  def account_creation_date
+    accountAge=(Date.today()-Date.parse(created_at.to_s)).to_i
+  end
+
+  def user_already_friend(friend_id)
+    @friend = Friendship.where('friend_id = ' + friend_id.to_s + " AND user_id = "+id.to_s)[0]
+    return !@friend.blank?
   end
 
 

@@ -5,7 +5,12 @@
     <% if(@friendships.size>0) %>
     <% @friendships.size.times do |friendIndex| %>
     <div id="friend-item">
+
+
+      <%= link_to user_profile_path(id:@friendships[friendIndex]["id"]), method: :get, remote: true do %>
       <%= image_tag "profile.png" %>
+    <% end %>
+
       <h2><%= @friendships[friendIndex]["first_name"][0].upcase+@friendships[friendIndex]["first_name"][1,@friendships[friendIndex]["first_name"].size].downcase+" "+@friendships[friendIndex]["last_name"][0].upcase+@friendships[friendIndex]["last_name"][1,@friendships[friendIndex]["last_name"].size].downcase %></h2>
     </div>
     <%end%>

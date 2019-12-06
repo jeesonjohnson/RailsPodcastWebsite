@@ -1,0 +1,68 @@
+<% if(!@user.blank?) %>
+  <div class="homepage-outer-flex">
+    <div style="flex:2">
+      <div id="user-profile-pic">
+        <%= image_tag "profile.png", class: "pull-left"%>
+      </div>
+      <h2 id="user-podcasts-main-title" class="text-center"><%= @user.full_user_name%></h2>
+      <div id="user-profile-details" style="width=100%">
+        <div>
+
+          <div id="age" class="pull-right">
+            <p class="pull-right"><a ><%="Account is "+ (@user.account_creation_date.to_s)+" days old"%></a>
+              <%if(@user.account_creation_date<8) %>
+                <%= image_tag "new_egg.gif", class: "pull-right"%>
+              <%else%>
+                <%= image_tag "profile_nyan.gif", class: "pull-right"%>
+
+              <%end%>
+
+            </p>
+
+          </div>
+
+          <div class="pull-right" id="follow-button">
+            <% if !(current_user.user_already_friend(@user.id)) %>
+            <%= link_to "Befriend",friendships_path(user_id: @user.id), class:"btn btn-primary btn-lg pull-left podcast-button-style", method: :post, remote: true%>
+            <%else%>
+              <%= link_to "Unfriend",friendships_path(user_id: @user.id), class:"btn btn-primary btn-lg pull-left podcast-button-style",style:"background-color:#CA3433", method: :delete,remote: true, data:{confirm: "Are you sure?"}%>
+
+                      <%end%>
+
+
+          </div>
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="flex-container-homepage" style="flex:2;background-color:red;">
+        <% if(@userPodcasts.size >0)%>
+          <% @userPodcasts.size.times do |podIndex| %>
+            <div class="flex-container-homepage-item ">
+
+              <%= link_to podcast_path(:itunes_id => @userPodcasts[podIndex]["itunes_id"]) do %>
+              <%= image_tag(@userPodcasts[podIndex]["image_url"], {:class => "home-container-image"}) %>
+            <% end %>
+          </div>
+        <%end%>
+      <%else %>
+        <div class="flex-container-homepage-item ">
+          <h4>It looks like the user hasnt subscribed to any podcasts.</h4>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>
+<%else%>
+<div class="flex-container-homepage-item ">
+  <h4>Error finding the user profile.</h4>
+  <p>Maybe the user deleted the profile?</p>
+</div>
+
+<%end%>

@@ -1,3 +1,57 @@
-// Place all the styles related to the UserPodcasts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$overall-secondary-yellow: #ffbf29;
+$nav-bottom-bg-color: #242423;
+$nav-side-bg-color: #1F1F1F;
+$overall-background: #0c0c0d;
+$logo-highlight-color: #47cf73;
+
+#user-podcasts-main-title {
+  font-weight: bold !important;
+  color: #47cf73 !important;
+  font-size: 70px;
+}
+
+#user-profile-pic {
+  padding: 20px;
+
+  img {
+    width: 340px;
+    height: 315px;
+    border-radius: 20px;
+  }
+}
+
+#user-profile-details {
+  height: 200px;
+  margin-left: 370px;
+  div{
+    padding: 20px 20px;
+    div#age{
+      background-color:grey;
+      height: 80px;
+      width: 400px;
+      border-radius: 20px;
+      p{
+        font-size: 20px;
+        font-weight: bold;
+        a, a:hover{
+          padding-right: 20px;
+          margin-top: 100px;
+          text-decoration: none;
+          color: white;
+        }
+      }
+      img{
+        border-radius: 30px;
+        width: 50px;
+        height: 50px;
+        margin: -5px;
+      }
+    }
+    div#follow-button{
+      height: 80px;
+      width: 400px;
+      border-radius: 20px;
+
+    }
+  }
+}

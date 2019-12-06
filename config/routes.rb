@@ -18,9 +18,14 @@ Rails.application.routes.draw do
 
 
 
+
   get '/playaudio', to: 'podcast#playaudio'
 
   delete '/user_podcasts', to: 'user_podcasts#destroy'
   post '/user_podcasts', to: 'user_podcasts#create'
 
+  get '/profile/:id', to: 'user_podcasts#get_profile', as: 'user_profile'
+
+
+  resource :friendships, only: [:create,:destroy]
 end

@@ -6,12 +6,19 @@ $logo-highlight-color: #47cf73;
 
 #user-podcasts-main-title {
   font-weight: bold !important;
-  color: #47cf73 !important;
-  font-size: 70px;
+  color: $logo-highlight-color!important;
+  font-size: 60px;
+}
+
+#overall-friend-container {
+  background-color: $nav-bottom-bg-color;
+  border-radius: 20px;
 }
 
 #user-profile-pic {
-  padding: 20px;
+  padding-top: 20px;
+  padding-left: 10px;
+  padding-bottom: 20px;
 
   img {
     width: 340px;
@@ -20,38 +27,94 @@ $logo-highlight-color: #47cf73;
   }
 }
 
-#user-profile-details {
-  height: 200px;
-  margin-left: 370px;
-  div{
-    padding: 20px 20px;
-    div#age{
-      background-color:grey;
-      height: 80px;
-      width: 400px;
+#user-data-styling {
+  display: flex;
+  flex-direction: column;
+
+  h2 {
+    white-space: wrap;
+    overflow: hidden;
+    flex: 1;
+  }
+
+  p {
+    flex: 1;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  div#user-age {
+    height: 80px;
+    flex: 1;
+
+    div#user-data {
+      background-color: grey;
       border-radius: 20px;
-      p{
+      width: 320px;
+      padding: 20px 0;
+
+      a {
+        padding-left: 20px;
+        padding-right: 5px;
+        padding-top: 27px;
+        text-decoration: none;
+        color: white;
         font-size: 20px;
         font-weight: bold;
-        a, a:hover{
-          padding-right: 20px;
-          margin-top: 100px;
-          text-decoration: none;
-          color: white;
-        }
       }
-      img{
+
+      img {
         border-radius: 30px;
         width: 50px;
         height: 50px;
-        margin: -5px;
       }
     }
-    div#follow-button{
-      height: 80px;
-      width: 400px;
-      border-radius: 20px;
-
-    }
   }
+}
+
+#follow-friend {}
+
+#unfollow-friend-button {
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  height: 80px;
+  width: 320px;
+  background-color: purple;
+  border: none;
+  font-weight: bold;
+  font-size: 30px;
+  color: $logo-highlight-color;
+}
+
+#follow-friend-button {
+  align-items: center;
+  text-align: center;
+  border-radius: 20px;
+  height: 80px;
+  width: 320px;
+  background-color: $logo-highlight-color;
+  border: none;
+  font-weight: bold;
+  font-size: 30px;
+  color: black;
+}
+
+#user-account-pod-display {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: grey;
+  border-radius: 20px;
+
+  width: 1170px;
+  div{
+    flex:1;
+    border-radius: 20px;
+    padding: 25px 25px;
+
+  }
+
 }

@@ -3,22 +3,27 @@
   <p class="text-center">Click any of the profiles to view thier podcasts</p>
   <div id="friends-container">
     <% if(@friendships.size>0) %>
-    <% @friendships.size.times do |friendIndex| %>
-    <div id="friend-item">
+      <% @friendships.size.times do |friendIndex| %>
 
 
-      <%= link_to user_profile_path(id:@friendships[friendIndex]["id"]), method: :get, remote: true do %>
-      <%= image_tag "profile.png" %>
-    <% end %>
+        <div id="friend-item">
+          <div>
 
-      <h2><%= @friendships[friendIndex]["first_name"][0].upcase+@friendships[friendIndex]["first_name"][1,@friendships[friendIndex]["first_name"].size].downcase+" "+@friendships[friendIndex]["last_name"][0].upcase+@friendships[friendIndex]["last_name"][1,@friendships[friendIndex]["last_name"].size].downcase %></h2>
-    </div>
-    <%end%>
-    <%else%>
-    <div style="width:100%">
-      <h2 style="color:black;" class="text-center">It look like you dont follow any friends, try searching for them :)</h2>
+            <%= link_to user_profile_path(id:@friendships[friendIndex]["id"]), method: :get, remote: true do %>
+            <%= image_tag "profile.png" %>
+          <% end %>
+
+          <h2 class="text-center"><%= @friendships[friendIndex]["first_name"][0].upcase+@friendships[friendIndex]["first_name"][1,@friendships[friendIndex]["first_name"].size].downcase+"
+            "+@friendships[friendIndex]["last_name"][0].upcase+@friendships[friendIndex]["last_name"][1,@friendships[friendIndex]["last_name"].size].downcase %></h2>
+        </div>
       </div>
 
-    <% end %>
-  </div>
+    <%end%>
+  <%else%>
+    <div style="width:100%">
+      <h2 style="color:black;" class="text-center">It look like you dont follow any friends, try searching for them :)</h2>
+    </div>
+
+  <% end %>
+</div>
 </div>

@@ -1,18 +1,29 @@
-<% if(@search) %>
-<h1>hello there</h1>
+<div id="find-friends-main">
+
+  <% if(@search) %>
+    <% @search.entries.size.times do |searchIndex| %>
+      <div id="found-friends">
+
+        <%= link_to user_profile_path(id:@search[searchIndex]["id"]), method: :get, remote: true do %>
+        <%= image_tag "profile.png" %>
+      <% end %>
+
+      <h2 class="text-center"><%= @search[searchIndex]["first_name"][0].upcase+@search[searchIndex]["first_name"][1,@search[searchIndex]["first_name"].size].downcase+"
+        "+@search[searchIndex]["last_name"][0].upcase+@search[searchIndex]["last_name"][1,@search[searchIndex]["last_name"].size].downcase %></h2>
+    </div>
+
+  <% end %>
 
 
 
-<% @search.entries.size.times do |searchIndex| %>
-<div >
-  <h1><%= @search[searchIndex]["first_name"] + @search[searchIndex]["last_name"]%></h1>
 
-  </div>
 
-<% end %>
 
 
 
 <% else %>
-<h3 clas="text-center">Sorry it looks like no elements are present </h3>
+  <h3 class="text-center">Sorry it looks like no elements are present
+  </h3>
 <%end %>
+
+</div>

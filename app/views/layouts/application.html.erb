@@ -39,7 +39,7 @@
       		</ul>
       		<div class="user-name-side-style">
       			<i class="glyphicon glyphicon-user" style="padding-top:5px;font-size:20px;"></i>
-      			<span ><%= link_to current_user.full_user_name.present? ? current_user.full_user_name : current_user.email, edit_user_registration_path(current_user), method: :get%></span>
+      			<span ><%= link_to current_user.full_user_name.present? ? current_user.full_user_name : current_user.email, user_profile_path(id:current_user.id), method: :get, remote: true%></span>
       		</div>
       		<div class="logout-side-style">
       			<%= link_to "Logout", destroy_user_session_path, method: :delete %>

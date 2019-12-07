@@ -1,0 +1,6 @@
+$(document).ready(function() {
+      $("#loading-available-button").click(function() {
+          $('#main-document-class').html("<h1 id=\"loading-text\" class=\"text-center\">Loading…</h1> <img src=\"<%= asset_path( 'loading-nyan.gif' ) %>\" id=\"loading-indicator\"/>");
+          });
+
+      });

@@ -29,6 +29,18 @@ $jumbotron-heading-color: $overall-text-color;
 padding: 0;
 
 }
+#loading-indicator{
+  width: 100%;
+}
+
+#loading-text {
+    position: relative;
+    font-weight: bold;
+    color:$logo-highlight-color;
+    font-size: 5em
+}
+
+
 
 
 .center {

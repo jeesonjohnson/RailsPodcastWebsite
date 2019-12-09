@@ -1,6 +1,23 @@
 $(document).ready(function() {
-      $("#loading-available-button").click(function() {
-          $('#main-document-class').html("<h1 id=\"loading-text\" class=\"text-center\">Loading…</h1> <img src=\"<%= asset_path( 'loading-nyan.gif' ) %>\" id=\"loading-indicator\"/>");
-          });
 
+  $( ".loading-available-button" ).each(function(index) {
+      $(this).on("click", function(){
+        console.log("clicked button");
+        $('#main-document-class').html("<h1 id=\"loading-text\" class=\"text-center\">Loading…</h1> <img src=\"<%= asset_path( 'loading-nyan.gif' ) %>\" id=\"loading-indicator\"/>");
       });
+  });
+
+});
+  // $( ".loading-available-button" ).each(function(index) {
+  //     $(this).on("click", function(){
+  //       console.log("clicked button");
+  //       $('#main-document-class').html("<h1 id=\"loading-text\" class=\"text-center\">Loading…</h1> <img src=\"<%= asset_path( 'loading-nyan.gif' ) %>\" id=\"loading-indicator\"/>");
+  //     });
+  // });
+
+      //
+      // $("#loading-available-button").click(function() {
+      //     $('#main-document-class').html("<h1 id=\"loading-text\" class=\"text-center\">Loading…</h1> <img src=\"<%= asset_path( 'loading-nyan.gif' ) %>\" id=\"loading-indicator\"/>");
+      //     });
+      //
+      // });

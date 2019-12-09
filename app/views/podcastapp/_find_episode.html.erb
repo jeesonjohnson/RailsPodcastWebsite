@@ -6,9 +6,9 @@
     <h4 class="text-center "><%= raw @podcast.description %></h4>
     <%= link_to "Go to website", "http://"+@podcast.url, :target => "_blank", class: "text-center website-link-style", style: "padding-left:20px;" %>
     <% if !(current_user.podcast_already_subscribed(params[:itunes_id],current_user.id)) %>
-    <%= link_to "Subscribe",user_podcasts_path(user:current_user,itunes_id: params[:itunes_id],name:@podcast.title,image_url:@podcast.image.url), class:"btn btn-primary btn-lg pull-right podcast-button-style", method: :post%>
+    <%= link_to "Subscribe",user_podcasts_path(user:current_user,itunes_id: params[:itunes_id],name:@podcast.title,image_url:@podcast.image.url), class:"btn btn-primary btn-lg pull-right podcast-button-style", method: :post, remote: true%>
     <%else%>
-      <%= link_to "Unubscribe",user_podcasts_path(user_id:current_user.id,itunes_id: params[:itunes_id]), class:"btn btn-primary btn-lg pull-right podcast-button-style",style:"background-color:#CA3433", method: :delete, data:{confirm: "Are you sure?"}%>
+      <%= link_to "Unubscribe",user_podcasts_path(user_id:current_user.id,itunes_id: params[:itunes_id]), class:"btn btn-primary btn-lg pull-right podcast-button-style",style:"background-color:#CA3433", method: :delete, data:{confirm: "Are you sure?"}, remote: true%>
     <%end%>
   </div>
   <br/>

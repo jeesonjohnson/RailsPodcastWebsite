@@ -10,11 +10,11 @@ Rails.application.routes.draw do
 
   get '/app/findfriends', to: 'podcastapp#find_friends'
 
-  get '/app/friends', to: 'podcastapp#friends'
+  get '/app/friends', to: 'podcastapp#friends_view'
 
   get '/searchpodcasts', to: 'podcast#search'
 
-  get '/podcast', to: 'podcastapp#findEpisode'
+  get '/podcast', to: 'podcastapp#find_episode'
 
 
 

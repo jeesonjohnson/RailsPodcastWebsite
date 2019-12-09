@@ -24,12 +24,12 @@
 
               <div id="follow-friend" class="pull-right">
                 <% if (current_user.id==@user.id) %>
-                <%= link_to "Edit your account",edit_user_registration_path(current_user), class:"btn btn-primary btn-lg text-center", id:"follow-friend-button", method: :get, style:"background-color:red;"%>
+                <%= link_to "Edit your account",edit_user_registration_path(current_user), class:"btn btn-primary btn-lg text-center loading-available-button", id:"follow-friend-button", method: :get, style:"background-color:red;"%>
                 <%else%>
                 <% if !(current_user.user_already_friend(@user.id)) %>
-                  <%= link_to "Befriend",friendships_path(user_id: @user.id), class:"btn btn-primary btn-lg text-center", id:"follow-friend-button", method: :post, remote: true%>
+                  <%= link_to "Befriend",friendships_path(user_id: @user.id), class:"btn btn-primary btn-lg text-center follow-friend-button loading-available-button",id:"follow-friend-button", method: :post, remote: true, data: { disable_with: "Please wait..." }%>
                 <%else%>
-                  <%= link_to "Unfriend",friendships_path(user_id: @user.id), class:"btn btn-primary btn-lg text-center", id:"unfollow-friend-button", method: :delete,remote: true, data:{confirm: "Are you sure?"}%>
+                  <%= link_to "Unfriend",friendships_path(user_id: @user.id), class:"btn btn-primary btn-lg text-center unfollow-friend-button loading-available-button",id:"unfollow-friend-button", method: :delete,remote: true, data:{confirm: "Are you sure?"}%>
                 <%end%>
                 <%end%>
               </div>
@@ -47,8 +47,10 @@
 
           <div>
 
-            <%= link_to podcast_path(:itunes_id => @userPodcasts[podIndex]["itunes_id"]) do %>
-            <%= image_tag(@userPodcasts[podIndex]["image_url"], {:class => "home-container-image"}) %>
+
+
+            <%= link_to podcast_path(:itunes_id => @userPodcasts[podIndex]["itunes_id"]),  method: :get, remote: true, class:"loading-available-button" do %>
+            <%= image_tag(@userPodcasts[podIndex]["image_url"], {:class => "home-container-image loading-available-button" }) %>
           <% end %>
         </div>
       <%end%>

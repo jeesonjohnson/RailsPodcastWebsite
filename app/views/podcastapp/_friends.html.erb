@@ -1,0 +1,30 @@
+<div class="container">
+  <h1 class="text-center" id="friend-title">Your Friends</h1>
+  <p class="text-center">Click any of the profiles to view thier podcasts</p>
+  <div id="friends-container">
+    <% if(!@friendships.blank?) %>
+      <% if(@friendships.size>0) %>
+        <% @friendships.size.times do |friendIndex| %>
+
+          <div id="friend-item">
+            <div>
+
+              <%= link_to user_profile_path(id:@friendships[friendIndex]["id"]), method: :get, remote: true, class: "loading-available-button" do %>
+              <%= image_tag "profile.png", class:"loading-available-button"%>
+            <% end %>
+
+            <h2 class="text-center"><%= @friendships[friendIndex]["first_name"][0].upcase+@friendships[friendIndex]["first_name"][1,@friendships[friendIndex]["first_name"].size].downcase+"
+              "+@friendships[friendIndex]["last_name"][0].upcase+@friendships[friendIndex]["last_name"][1,@friendships[friendIndex]["last_name"].size].downcase %></h2>
+          </div>
+        </div>
+
+      <%end%>
+    <%end%>
+  <%else%>
+    <div style="width:100%">
+      <h2 style="" class="text-center">It look like you dont follow any friends, try searching for them :)</h2>
+    </div>
+
+  <% end %>
+</div>
+</div>

@@ -1,16 +1,16 @@
 
 <div  class="jumbotron">
-    <h1 class="text-center" id="main-title">Search for your favourite podcasts</h1>
+    <h1 class="text-center" id="main-title">Search for your friends</h1>
     <div id="pod-search-div">
-         <%= form_tag searchpodcasts_path,remote: true, method: :get, id: "podcast-lookup-form" do%>
+         <%= form_tag searchfriends_path,remote: true, method: :get, id: "podcast-lookup-form" do%>
             <div class="form-group row no-padding text-center col-md-12">
                     <div class="col-md-10">
-                        <%= text_field_tag :podcast, params[:podcast], placeholder: "Enter podcast name :)", autofocus: true, class: "form-control search-box input-lg"%>
+                        <%= text_field_tag :friend_search_query, params[:friend_search_query], placeholder: "Enter the name of your friend's or thier email :)", autofocus: true, class: "form-control search-box input-lg"%>
                     </div>
 
                     <div class="col-md-2">
                         <%= button_tag(type: :submit, class: "btn btn-lg btn-success" ) do %>
-                            <i class="fa fa-search"></i>  Search all podcasts
+                            <i class="fa fa-search"></i>  Search for your friends
                         <%end%>
 
                     </div>
@@ -23,5 +23,4 @@
 </div>
 
     <div id="results">
-        <%= render 'result'%>
     </div>

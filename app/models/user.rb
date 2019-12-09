@@ -33,8 +33,10 @@ class User < ApplicationRecord
     userPods = UserPodcast.where('user_id = ' + user_id.to_s)
     podcasts = []
     userPods.size.times do |podIndex|
-      pod=Podcast.where("id = " + userPods[podIndex]["id"].to_s)[0]
-      podcasts.push(pod)
+      pod=Podcast.where("id = " + userPods[podIndex]["id"].to_s).first
+      if(!pod.blank?)##This if check is to prevent errors from occuring when multiple soam requests are made to the function
+        podcasts.push(pod)
+      end
     end
     return podcasts
   end

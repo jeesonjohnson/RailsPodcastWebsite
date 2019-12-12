@@ -1,10 +1,4 @@
-$overall-background: #0c0c0d;
-$overall-text-color: #ffff;
-$overall-secondary-yellow: #ffbf29; //#3E3E55;
-$logo-highlight-color: #47cf73; //#00D083;
-$nav-bottom-bg-color: #242423;
-$nav-side-bg-color: #1F1F1F;
-$green-title-color: #47cf73; //
+@import '../constants';
 
 .podcast-episode-jumbotron {
   background-color: $nav-side-bg-color !important;

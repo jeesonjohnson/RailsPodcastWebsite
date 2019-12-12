@@ -1,8 +1,4 @@
-$nav-bottom-bg-color: #242423;
-$nav-side-bg-color: #1F1F1F;
-$overall-secondary-yellow: #ffbf29;
-$logo-highlight-color: #47cf73;
-
+@import '../constants';
 .app-title {
   text-align: center;
   font-weight: bold;

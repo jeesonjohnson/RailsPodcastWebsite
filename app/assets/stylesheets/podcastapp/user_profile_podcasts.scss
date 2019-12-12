@@ -1,9 +1,7 @@
-$overall-secondary-yellow: #ffbf29;
-$nav-bottom-bg-color: #242423;
-$nav-side-bg-color: #1F1F1F;
-$overall-background: #0c0c0d;
-$logo-highlight-color: #47cf73;
-
+@import '../constants';
+/*
+  All appropraite styling for a given user profile, which also displays appropriate user podcasts.
+*/
 #user-podcasts-main-title {
   font-weight: bold !important;
   color: $logo-highlight-color!important;
@@ -26,7 +24,7 @@ $logo-highlight-color: #47cf73;
     border-radius: 20px;
   }
 }
-
+//Simplifies stying of a given podcast profile by nesting elements
 #user-data-styling {
   display: flex;
   flex-direction: column;

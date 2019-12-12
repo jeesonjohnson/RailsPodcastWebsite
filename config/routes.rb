@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   root 'welcome#home'
 
+  get '/contact', to: 'welcome#contact'
+
   get '/app', to: 'podcastapp#home'
 
   get '/app/search', to: 'podcastapp#search'

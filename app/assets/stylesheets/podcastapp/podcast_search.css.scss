@@ -1,25 +1,27 @@
+@import '../constants';
+/*
+Styling for a given podcast search results (podcast icon styling).
+*/
 .podcast-logo{
     border-radius: 20px;
     width: 320px;
     height: 280px;
 }
 
-
 .podcast-button-style{
     margin-bottom:1px;
     margin-right:20px;
     color:black !important;
-    background-color:#47cf73;
+    background-color:$logo-highlight-color;
     width: 200px !important;
 }
 
 .pod-table-heading {
-    color: #ffbf29 !important;
+    color: $overall-secondary-yellow !important;
     font-weight: bold;
-
 
 }
 
 .pod-item{
-    background-color:#1F1F1F;
+    background-color:$nav-side-bg-color;
 }

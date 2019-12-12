@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   root 'welcome#home'
 
   get '/contact', to: 'welcome#contact'
+  post 'request_contact', to: 'welcome#request_contact'
 
   get '/app', to: 'podcastapp#home'
 

@@ -60,6 +60,19 @@ en:
 
   contact:
     title: "Contact us for more information"
+    contact_us: "Complete the following form to contact us"
+    name: "Name"
+    email: "Email"
+    enter_name: "Enter Name"
+    enter_email: "Enter Email"
+    telephone: "Telephone"
+    enter_telephone: "Enter Telephone"
+    message: "Message"
+    enter_message: "Enter Message"
+    submit: "Submit request"
+    no_email: "No email was sent, an error occured"
+    yes_email: "The email was sent!"
+
 
   ##Below are for PODCASTAPP locals
   navbar:

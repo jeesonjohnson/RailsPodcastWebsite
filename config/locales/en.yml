@@ -35,6 +35,8 @@ en:
   sign_up: "Sign up"
   log_in: "Log in"
   log_out: "Log Out"
+  subscribe: "Subscribe!"
+  unsubscribe: "Unubscribe"
 
   ##Pre main application locals.
   home_navbar:
@@ -63,3 +65,39 @@ en:
     friends: "Friends"
     find_friends: "Find Friends"
     select_pod: "Select a podcast to play an episode :)"
+
+  audio_player:
+    error: "Your browser does not support the audio element / Playback"
+
+  home:
+    title: "Homepage"
+    sub_title: "Your Podcasts"
+    no_podcasts_error: "It looks like you havent subscribed to any podcasts, try searching for them."
+    trending: "Trending Podcasts"
+    top_podcasts_error: "There was an error getting the top podcasts:( try reloading"
+
+  search:
+    title: "Search for your favourite podcasts"
+    enter_pod: "Enter podcast name :)"
+    search_all: "Search all podcasts"
+
+  search_result:
+    discover_more: "Find out more!"
+    error: "No such podcasts exist"
+
+  friends:
+    title: "Your Friends"
+    desc: "Click any profile to view thier podcasts"
+    no_friends: "It look like you dont follow any friends, try searching for them :)"
+
+  friends_result:
+    no_accounts: "Sorry it looks like no accounts with that name are present"
+
+  find_friends:
+    title: "Search for your friends"
+    enter_friend_name: "Enter the name or email of your friend."
+
+  find_episodes:
+    website: "Go to website"
+    confirm: "Are you sure"
+    error: "That podcast is not recognised"

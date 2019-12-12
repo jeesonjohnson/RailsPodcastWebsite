@@ -4,23 +4,24 @@
     <%= image_tag(@podcast.image.url, {:class => "podcast-logo pull-left"}) %>
     <h1 class="text-center pod-table-heading"><%= @podcast.title %></h1>
     <h4 class="text-center "><%= raw @podcast.description %></h4>
-    <%= link_to "Go to website", "http://"+@podcast.url, :target => "_blank", class: "text-center website-link-style", style: "padding-left:20px;" %>
+    <%= link_to t('find_episodes.website'), "http://"+@podcast.url, :target => "_blank", class: "text-center website-link-style", style: "padding-left:20px;" %>
     <% if !(current_user.podcast_already_subscribed(params[:itunes_id],current_user.id)) %>
-    <%= link_to "Subscribe",user_podcasts_path(user:current_user,itunes_id: params[:itunes_id],name:@podcast.title,image_url:@podcast.image.url), class:"btn btn-primary btn-lg pull-right podcast-button-style", method: :post, remote: true%>
+      <%= link_to t('subscribe'),user_podcasts_path(user:current_user,itunes_id: params[:itunes_id],name:@podcast.title,image_url:@podcast.image.url), class:"btn btn-primary btn-lg pull-right podcast-button-style", method: :post, remote: true%>
     <%else%>
-      <%= link_to "Unubscribe",user_podcasts_path(user_id:current_user.id,itunes_id: params[:itunes_id]), class:"btn btn-primary btn-lg pull-right podcast-button-style",style:"background-color:#CA3433", method: :delete, data:{confirm: "Are you sure?"}, remote: true%>
+      <%= link_to t('unsubscribe'),user_podcasts_path(user_id:current_user.id,itunes_id: params[:itunes_id]), class:"btn btn-primary btn-lg pull-right podcast-button-style",style:"background-color:#CA3433", method: :delete, data:{confirm: t('find_episodes.confirm')},
+      remote: true%>
     <%end%>
   </div>
   <br/>
 
   <% @podcast.entries.size.times do |podIndex| %>
-  <div class="episode-list-style jumbotron" style="width:1170px">
+    <div class="episode-list-style jumbotron" style="width:1170px">
       <div style="flex:1">
         <%=link_to "", playaudio_path(:audioUrl => @podcast.entries[podIndex].enclosure_url, :title=>@podcast.title,:image_url=>@podcast.image.url),remote: true, method: :get, class: "glyphicon glyphicon-play-circle play-icon-style"%>
       </div>
       <div style="flex:4">
         <h2 id="episode-title"><%=@podcast.entries[podIndex].title%></h2>
-        <p style="padding-left:80px" class="pod-description-style"><%=raw  @podcast.entries[podIndex].summary%></p>
+        <p style="padding-left:80px" class="pod-description-style"><%=raw @podcast.entries[podIndex].summary%></p>
       </div>
     </div>
     <br/>
@@ -28,6 +29,5 @@
 
 </div>
 <% else %>
-<h1>That podcast is not recognised
-</h1>
+  <h1><%= t('find_episodes.error') %></h1>
 <%end%>

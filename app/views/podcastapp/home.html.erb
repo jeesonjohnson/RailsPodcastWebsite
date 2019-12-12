@@ -1,9 +1,9 @@
 <div class="container well overall-home-styling">
-  <h1 id="main-title" class="text-center">Homepage</h1>
+  <h1 id="main-title" class="text-center"><%= t('home.title') %></h1>
   <br/>
   <div class="homepage-outer-flex">
     <div style="flex:2">
-      <h2 id="home-episode-title" class="text-center">Your Podcasts</h2>
+      <h2 id="home-episode-title" class="text-center"><%= t('home.sub_title') %></h2>
       <div class="flex-container-homepage" style="flex:2;">
         <% if(@userPodcasts.size >0)%>
           <% @userPodcasts.size.times do |podIndex| %>
@@ -15,7 +15,7 @@
         <%end%>
       <%else %>
         <div class="flex-container-homepage-item ">
-          <h4>It looks like you havent subscribed to any podcasts, try searching for them.</h4>
+          <h4><%= t('home.no_podcasts_error') %></h4>
         </div>
       <% end %>
 
@@ -23,7 +23,7 @@
 
   </div>
   <div style="flex:1;background-color:grey;">
-    <h2 id="home-episode-title" class="text-center">Trending podcasts</h2>
+    <h2 id="home-episode-title" class="text-center"><%= t('home.trending') %></h2>
     <div class="top-podcasts-style">
       <div style="flex:1;padding-right:16px;">
 
@@ -59,7 +59,7 @@
         <% end %>
       <% else %>
         <div class="flex-container-homepage-item ">
-          <h4>There was an error getting the top podcasts:( try reloading</h4>
+          <h4><%= t('home.top_podcasts_error') %></h4>
         </div>
       <% end %>
 

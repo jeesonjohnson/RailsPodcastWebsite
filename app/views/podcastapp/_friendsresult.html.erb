@@ -1,5 +1,4 @@
 <div id="find-friends-main">
-
   <% if(@search) %>
     <% if(@search.entries.size>0) %>
 
@@ -16,14 +15,11 @@
 
     <% end %>
   <% else %>
-    <h3 class="text-center">Sorry it looks like no accounts with that name are present
-    </h3>
+    <h3 class="text-center"><%= t('friends_result.no_accounts') %></h3>
 
   <% end %>
-
 <% else %>
-  <h3 class="text-center">Sorry it looks like no accounts with that name are present
-  </h3>
+  <h3 class="text-center"><%= t('friends_result.no_accounts') %></h3>
 <%end %>
 
 </div>

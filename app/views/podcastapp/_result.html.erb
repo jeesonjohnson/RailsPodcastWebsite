@@ -1,25 +1,18 @@
 <% if @podcast%>
-
   <% if @podcast["results"].size>0 %>
-
     <% @podcast["results"].size.times do |podIndex| %>
-
       <div class="jumbotron container pod-item">
         <%= image_tag(@podcast["results"][podIndex]["artworkUrl600"], {:class => "podcast-logo pull-left"}) %>
         <h2 class="text-center pod-table-heading"><%= @podcast["results"][podIndex]["trackName"] %></h2>
         <h4 class="text-center"><%= @podcast["results"][podIndex]["artistName"] %></h4>
         <p>
-          <%= link_to "Find out more!", podcast_path(:itunes_id => @podcast["results"][podIndex]["trackId"]), method: :get,id:"loading-available-button", class: "btn btn-primary btn-lg pull-right podcast-button-style loading-available-button", remote: true%>
+          <%= link_to t(search_result.discover_more), podcast_path(:itunes_id => @podcast["results"][podIndex]["trackId"]), method: :get,id:"loading-available-button", class: "btn btn-primary btn-lg pull-right podcast-button-style loading-available-button", remote: true%>
         </p>
       </div>
-
     <%end%>
-
   <% else %>
     <div class="well">
-      <h1 class="text-center" style="color:black">No such podcasts exsist! :(</h1>
+      <h1 class="text-center" style="color:black"><%= t('search_result.error') %></h1>
     </div>
-
   <% end %>
-
 <%end%>

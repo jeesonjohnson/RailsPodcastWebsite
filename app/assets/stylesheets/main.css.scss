@@ -27,6 +27,11 @@ $jumbotron-heading-color: $overall-text-color;
 padding: 0;
 
 }
+//To prevent text heighligting
+a, a:hover, a:active, a:visited, a:focus {
+    text-decoration:none;
+    color: white;
+}
 
 .center {
   align-content: center;

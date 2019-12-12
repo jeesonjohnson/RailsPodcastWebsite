@@ -13,7 +13,10 @@
 .sidebar-style {
   display: flex;
   position: relative;
-
+  a:hover, a:active, a:focus {
+      text-decoration:none;
+      color: whitesmoke;
+  }
   a {
     font-size: 25px;
     color: whitesmoke;
@@ -89,7 +92,7 @@
   border-radius: 5px;
 
   a {
-    color: black;
+    color: black !important;
     font-weight: bold;
     font-size: 20px;
   }
@@ -120,6 +123,7 @@
 
     a:hover {
       text-decoration: none;
+      color: $logo-highlight-color !important;
     }
   }
 }

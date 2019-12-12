@@ -9,10 +9,10 @@
       <div class="col-sm-8">
         <div id="user-data-styling">
           <h2 id="user-podcasts-main-title" class="text-center"><%= @user.full_user_name%></h2>
-          <p class="text-center">Users says hello world</p>
+          <p class="text-center"><%= t('user.default_user_text') %></p>
           <div id="user-age">
             <div id="user-data" class="pull-left">
-              <a ><%="Account is "+ (@user.account_creation_date.to_s)+" days old"%></a>
+              <a ><%=t('user.account')+ (@user.account_creation_date.to_s)+t('user.account_age')%></a>
               <%if(@user.account_creation_date<5) %>
                 <%= image_tag "new_egg.gif"%>
                 <%elsif (@user.account_creation_date<8)%>
@@ -24,12 +24,12 @@
 
               <div id="follow-friend" class="pull-right">
                 <% if (current_user.id==@user.id) %>
-                <%= link_to "Edit your account",edit_user_registration_path(current_user), class:"btn btn-primary btn-lg text-center loading-available-button", id:"follow-friend-button", method: :get, style:"background-color:red;"%>
+                <%= link_to t('user.edit'),edit_user_registration_path(current_user), class:"btn btn-primary btn-lg text-center loading-available-button", id:"follow-friend-button", method: :get, style:"background-color:red;"%>
                 <%else%>
                 <% if !(current_user.user_already_friend(@user.id)) %>
-                  <%= link_to "Befriend",friendships_path(user_id: @user.id), class:"btn btn-primary btn-lg text-center follow-friend-button loading-available-button",id:"follow-friend-button", method: :post, remote: true, data: { disable_with: "Please wait..." }%>
+                  <%= link_to t('user.befriend'),friendships_path(user_id: @user.id), class:"btn btn-primary btn-lg text-center follow-friend-button loading-available-button",id:"follow-friend-button", method: :post, remote: true, data: { disable_with: t('user.loading') }%>
                 <%else%>
-                  <%= link_to "Unfriend",friendships_path(user_id: @user.id), class:"btn btn-primary btn-lg text-center unfollow-friend-button loading-available-button",id:"unfollow-friend-button", method: :delete,remote: true, data:{confirm: "Are you sure?"}%>
+                  <%= link_to t('user.unfriend'),friendships_path(user_id: @user.id), class:"btn btn-primary btn-lg text-center unfollow-friend-button loading-available-button",id:"unfollow-friend-button", method: :delete,remote: true, data:{confirm: t('user.confirm')}%>
                 <%end%>
                 <%end%>
               </div>
@@ -39,7 +39,7 @@
         </div>
       </div>
     </div>
-    <h3 id="user-podcasts-main-title" style="font-size:40px"> Podcasts </h3>
+    <h3 id="user-podcasts-main-title" style="font-size:40px"> <%= t('user.podcast_word') %> </h3>
 
     <div id="user-account-pod-display">
       <% if(@userPodcasts.size >0)%>
@@ -57,7 +57,7 @@
     <%else %>
       <div>
 
-        <h4>It looks like the user hasnt subscribed to any podcasts.</h4>
+        <h4><%= t('user.no_podcasts') %></h4>
 
       </div>
       <% end %>
@@ -67,7 +67,7 @@
   <%else%>
 
     <div class="flex-container-homepage-item ">
-      <h4>Error finding the user profile.</h4>
-      <p>Maybe the user deleted the profile?</p>
+      <h4><%= t('user.error_cannot_find_profile') %></h4>
+      <p><%= t('user.error_account_delete') %></p>
     </div>
   <%end%>

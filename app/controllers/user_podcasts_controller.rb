@@ -10,7 +10,7 @@ class UserPodcastsController < ApplicationController
       flash[:error] = I18n.t 'podcast.error'
     end
     respond_to do |format|
-      format.js { render partial: 'podcastapp/find_episode' }
+      format.js { render partial: 'podcastapp/episode/find_episode' }
     end
 
 
@@ -29,7 +29,7 @@ class UserPodcastsController < ApplicationController
       flash[:error] = I18n.t 'podcast.error'
     end
     respond_to do |format|
-      format.js { render partial: 'podcastapp/find_episode' }
+      format.js { render partial: 'podcastapp/episode/find_episode' }
     end
   end
 

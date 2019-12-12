@@ -6,14 +6,14 @@ class PodcastappController < ApplicationController
     @topPodcasts = Podcast.get_top_podcasts
     if request.xhr?
       respond_to do |format|
-        format.js { render partial: 'podcastapp/home' }
+        format.js { render partial: 'podcastapp/home/home' }
       end
     end
   end
 
   def search
     respond_to do |format|
-      format.js { render partial: 'podcastapp/search' }
+      format.js { render partial: 'podcastapp/search/search' }
     end
   end
 
@@ -24,20 +24,20 @@ class PodcastappController < ApplicationController
       flash[:error] = I18n.t 'podcast.error'
     end
     respond_to do |format|
-      format.js { render partial: 'podcastapp/find_episode' }
+      format.js { render partial: 'podcastapp/episode/find_episode' }
     end
   end
 
   def find_friends
     respond_to do |format|
-      format.js { render partial: 'podcastapp/find_friends' }
+      format.js { render partial: 'podcastapp/friends/find_friends' }
     end
   end
 
   def friends_view
     @friendships=current_user.friends
     respond_to do |format|
-      format.js { render partial: 'podcastapp/friends' }
+      format.js { render partial: 'podcastapp/friends/friends' }
     end
   end
 

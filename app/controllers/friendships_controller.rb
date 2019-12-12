@@ -39,7 +39,7 @@ class FriendshipsController < ApplicationController
       puts params[:friend_search_query]
   end
     respond_to do |format|
-      format.js { render partial: 'podcastapp/friendsresult' }
+      format.js { render partial: 'podcastapp/friends/friendsresult' }
     end
   end
 end

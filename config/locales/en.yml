@@ -105,6 +105,20 @@ en:
     confirm: "Are you sure"
     error: "That podcast is not recognised"
 
+  user:
+    default_user_text: "User says hello world"
+    account: "Account is "
+    account_age: " days old"
+    edit: "Edit your account"
+    befriend: "Befriend"
+    unfriend: "Unfriend"
+    confirm: "Are you sure"
+    loading: "Please wait"
+    podcast_word: "Podcast"
+    no_podcasts: "It looks like the user has not subscribed to any podcasts."
+    error_cannot_find_profile: "Error finding the user profile."
+    error_account_delete: "Maybe the user deleted the profile?"
+
 
   ##Below are controller locals
   friendship:

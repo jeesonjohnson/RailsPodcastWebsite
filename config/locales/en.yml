@@ -30,4 +30,36 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  app_title: "Podly"
+  app_desciption: "Welcome to the best podcast app"
+  sign_up: "Sign up"
+  log_in: "Log in"
+  log_out: "Log Out"
+
+  ##Pre main application locals.
+  home_navbar:
+    toggle: "Toggle Navigation"
+    about: "About Us"
+    contact: "Contact Us"
+    welcome: "Welcome Home"
+
+  footer:
+    copyright: "Copyright © Jeeson Johnson | About Us | Contact Us"
+
+  homepage:
+    app_dec1: "Grow."
+    app_dec2: "Discover."
+    app_dec3: "Learn."
+    app_dec4: "Stream."
+    sign_up_now: "Sign up now!"
+
+  contact:
+    title: "Contact us for more information"
+
+  ##Below are for PODCASTAPP locals
+  navbar:
+    home: "Home"
+    search: "Search Pods"
+    friends: "Friends"
+    find_friends: "Find Friends"
+    select_pod: "Select a podcast to play an episode :)"

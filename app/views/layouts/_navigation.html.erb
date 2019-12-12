@@ -3,25 +3,25 @@
     <div class="container-fluid ">
       <div class="navbar-header navbar-menu-wrapper">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
+          <span class="sr-only"><%=t('home_navbar.toggle')%></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
         <%= link_to image_tag('logo.png', width:"80px", height:"80px"), root_path, class: "navbar-brand center" %>
-        <%= link_to "Podly", root_path, class: "navbar-brand bold-text-nav", id:"logo" %>
+        <%= link_to t('app_title'), root_path, class: "navbar-brand bold-text-nav", id:"logo" %>
       </div>
       <% if(!current_user.present?)%>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="#">About Us</a>
+            <a href="#"><%=t('home_navbar.about')%></a>
           </li>
           <li>
-            <a href="#">Contact Us</a>
+            <a href="#"><%=t('home_navbar.contact')%></a>
           </li>
           <li>
-            <div><%= link_to "Log in", user_session_path, class: "btn btn-default login-button" %></div>
+            <div><%= link_to t("log_in"), user_session_path, class: "btn btn-default login-button" %></div>
           </li>
         </ul>
       </div>
@@ -31,9 +31,9 @@
 <% else %>
 
   <div class="generic">
-    <h1>Welcome HOme</h1>
+    <h1><%=t('home_navbar.welcome')%></h1>
 
-    <%= link_to "logout", destroy_user_session_path, method: :delete %>
+    <%= link_to t("log_out"), destroy_user_session_path, method: :delete %>
 
   </div>
 

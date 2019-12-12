@@ -1,19 +1,19 @@
 <div class="jumbotron vertically-center">
   <div class="container">
     <div>
-      <h1 class="pull-left">Welcome to the best podcast app</h1>
+      <h1 class="pull-left"><%= t('app_desciption') %></h1>
       <div class="flipping-text-outer-styling pull-right">
         <div>
           <ul class="scroll-animation-text scroll-text-design">
-            <li class="inner-scroll-text-style">Grow.</li>
-            <li class="inner-scroll-text-style">Discover.</li>
-            <li class="inner-scroll-text-style">Learn.</li>
-            <li class="inner-scroll-text-style">Stream.</li>
+            <li class="inner-scroll-text-style"><%= t('homepage.app_dec1') %></li>
+            <li class="inner-scroll-text-style"><%= t('homepage.app_dec2') %></li>
+            <li class="inner-scroll-text-style"><%= t('homepage.app_dec3') %></li>
+            <li class="inner-scroll-text-style"><%= t('homepage.app_dec4') %></li>
           </ul>
         </div>
       </div>
     </div>
-    <p><%= link_to "Sign up now!", new_user_registration_path, class: "btn btn-default login-button pull-right", style: "width:300px; height:65px;" %></p>
+    <p><%= link_to t('homepage.sign_up_now'), new_user_registration_path, class: "btn btn-default login-button pull-right", style: "width:300px; height:65px;" %></p>
   </div>
 </div>
 

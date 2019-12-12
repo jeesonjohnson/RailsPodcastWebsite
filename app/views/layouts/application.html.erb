@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Podly</title>
+    <title><%= t('app_title') %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -22,19 +22,19 @@
         <div class="sidebar-style">
       	<div class="sidebar">
       		<%= image_tag('logo.png', width:"80px", height:"80px", class:"pull-left",style:"padding-left:10px;") %>
-      		<h1 class="app-title">Podly</h1><br/>
+      		<h1 class="app-title"><%= t('app_title') %></h1><br/>
       		<ul>
       			<li>
       				<i class="glyphicon glyphicon-home"></i>
-      				<%= link_to "Home", app_path, id:"loading-available-button",class: "loading-available-button", method: :get, remote: true%>
+      				<%= link_to t('navbar.home'), app_path, id:"loading-available-button",class: "loading-available-button", method: :get, remote: true%>
       			</li>
       			<li>
-      				<i class="glyphicon glyphicon-zoom-in"></i><%= link_to "Search Pods", app_search_path, id:"loading-available-button",class: "loading-available-button", method: :get, remote: true%></li>
+      				<i class="glyphicon glyphicon-zoom-in"></i><%= link_to t('navbar.search'), app_search_path, id:"loading-available-button",class: "loading-available-button", method: :get, remote: true%></li>
       			<li>
-      				<i class="glyphicon glyphicon-thumbs-up"></i><%= link_to "Friends", app_friends_path, id:"loading-available-button",class: "loading-available-button", method: :get, remote: true %></li>
+      				<i class="glyphicon glyphicon-thumbs-up"></i><%= link_to t('navbar.friends'), app_friends_path, id:"loading-available-button",class: "loading-available-button", method: :get, remote: true %></li>
       			</li>
       			<li>
-      				<i class="glyphicon glyphicon-flag"></i><%= link_to "Find Friends", app_findfriends_path, id:"loading-available-button", class: "loading-available-button", method: :get, remote: true %></li>
+      				<i class="glyphicon glyphicon-flag"></i><%= link_to t('navbar.find_friends'), app_findfriends_path, id:"loading-available-button", class: "loading-available-button", method: :get, remote: true %></li>
       			</li>
       		</ul>
       		<div class="user-name-side-style">
@@ -42,7 +42,7 @@
       			<span ><%= link_to current_user.full_user_name.present? ? current_user.full_user_name : current_user.email, user_profile_path(id:current_user.id), method: :get, remote: true, class:"loading-available-button"%></span>
       		</div>
       		<div class="logout-side-style">
-      			<%= link_to "Logout", destroy_user_session_path, method: :delete %>
+      			<%= link_to t('log_out'), destroy_user_session_path, method: :delete %>
       		</div>
 
       	</div>
@@ -59,7 +59,7 @@
 
       <div class="main-bottom-navigation">
       	<div class="bottom-nav-style" id="music-player-controls">
-      		<h3 class="text-center">Select a podcast to play an episode :)</h3>
+      		<h3 class="text-center"><%= t('navbar.select_pod') %></h3>
       	</div>
 
       </div>

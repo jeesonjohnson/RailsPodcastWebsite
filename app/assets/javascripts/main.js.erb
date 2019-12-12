@@ -1,5 +1,10 @@
-$(document).ready(function() {
 
+/*
+  This function is responsible for setting a loading screen, when the user selects a process intensive process, which is needed as webite
+  is a single page website. Works by constantly checking the page for function buttons that have the class tag ".loading-available-button"
+  which it then associates with a loading action. 
+*/
+$(document).ready(function() {
   $( ".loading-available-button" ).each(function(index) {
       $(this).on("click", function(){
         console.log("clicked button");
@@ -8,16 +13,3 @@ $(document).ready(function() {
   });
 
 });
-  // $( ".loading-available-button" ).each(function(index) {
-  //     $(this).on("click", function(){
-  //       console.log("clicked button");
-  //       $('#main-document-class').html("<h1 id=\"loading-text\" class=\"text-center\">Loading…</h1> <img src=\"<%= asset_path( 'loading-nyan.gif' ) %>\" id=\"loading-indicator\"/>");
-  //     });
-  // });
-
-      //
-      // $("#loading-available-button").click(function() {
-      //     $('#main-document-class').html("<h1 id=\"loading-text\" class=\"text-center\">Loading…</h1> <img src=\"<%= asset_path( 'loading-nyan.gif' ) %>\" id=\"loading-indicator\"/>");
-      //     });
-      //
-      // });

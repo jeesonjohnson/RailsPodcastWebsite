@@ -21,7 +21,7 @@ class PodcastappController < ApplicationController
     if (!params[:itunes_id].blank?)
       @podcast = Podcast.episode_search(params[:itunes_id])
     else
-      flash[:error] = 'Invalid podcast page'
+      flash[:error] = I18n.t 'podcast.error'
     end
     respond_to do |format|
       format.js { render partial: 'podcastapp/find_episode' }

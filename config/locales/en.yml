@@ -33,6 +33,9 @@ en:
   app_title: "Podly"
   app_desciption: "Welcome to the best podcast app"
   sign_up: "Sign up"
+  first_name: "First Name"
+  last_name: "Last Name"
+  email: "Email"
   log_in: "Log in"
   log_out: "Log Out"
   subscribe: "Subscribe!"
@@ -101,3 +104,15 @@ en:
     website: "Go to website"
     confirm: "Are you sure"
     error: "That podcast is not recognised"
+
+
+  ##Below are controller locals
+  friendship:
+    add_friend_suc: 'Sucessfully added your friend'
+    add_friend_fail: 'Sucessfully unfollowed your friend'
+    error_unfollow: "Error! In unfollowing your friend"
+
+  podcast:
+    error: "Error developing podcast page"
+    subscribe: "Sucessfully subscribed to podcast"
+    unsubscribe: "Sucessfully unsubscribed to podcast"

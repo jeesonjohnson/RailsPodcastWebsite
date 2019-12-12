@@ -65,3 +65,15 @@ en:
       not_saved:
         one: "1 error was detected :"
         other: "%{count} errors were found, and so account was not generated:"
+  custom:
+    edit:
+      title: "Edit your user details"
+      waiting: "Currently waiting confirmation for:"
+      min: "characters minimum)"
+      no_blank: "(leave blank if you don't want to change it)"
+      password: "Password"
+      confirm_password: "Confirm Password"
+      current: "We need to confirm your current password"
+      current_password: "Current Password"
+      cancel_account: "Cancel your account"
+    

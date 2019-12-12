@@ -3,10 +3,10 @@ class FriendshipsController < ApplicationController
     @user = User.find(params[:user_id])
     current_user.friendships.build(friend_id: @user.id)
     if current_user.save
-      flash[:success] = 'Sucessfully added your friend'
+      flash[:success] = I18n.t 'friendship.add_friend_suc'
 
     else
-      flash[:danger] = 'Sucessfully unfollowed your friend'
+      flash[:danger] =I18n.t 'friendship.add_friend_fail'
     end
     @userPodcasts = User.get_user_podcasts(params[:user_id])
 
@@ -18,15 +18,14 @@ class FriendshipsController < ApplicationController
   def destroy
     @friendship = current_user.friendships.where('friend_id = ' + params[:user_id].to_s).first
     if @friendship.blank?
-      flash[:success] = 'Error! In unfollowing your friend'
+      flash[:success] = I18n.t 'friendship.error_unfollow'
     else
       @friendship.destroy
-      flash[:success] = 'Sucessfully unfollowed your friend'
+      flash[:success] = I18n.t 'friendship.add_friend_fail'
     end
 
     @user = User.find(params[:user_id])
     @userPodcasts = User.get_user_podcasts(params[:user_id])
-    puts 'COmpelted'
     respond_to do |format|
       format.js { render partial: 'user_podcasts/user' }
     end

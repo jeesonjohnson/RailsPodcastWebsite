@@ -17,4 +17,10 @@ class WelcomeControllerTest < ActionDispatch::IntegrationTest
     assert_select 'h1', 'Welcome to the best podcast app'
   end
 
+  test "Redirect to application if signed in" do
+    sign_in users(:one)
+    get '/'
+    assert_response :redirect
+  end
+
 end

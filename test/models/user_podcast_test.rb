@@ -6,6 +6,6 @@ class UserPodcastTest < ActiveSupport::TestCase
   end
 
   test 'Ensure user asosication to podcasts can be made' do
-    assert_equal UserPodcast.count, 3
+    assert_equal UserPodcast.count, 4
   end
 end

@@ -11,3 +11,7 @@ two:
 three:
   user_id: 2
   podcast_id: 1
+
+four:
+  user_id: 3
+  podcast_id: 1

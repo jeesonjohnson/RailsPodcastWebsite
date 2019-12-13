@@ -1,7 +1,7 @@
 <div class="container">
   <h1 class="text-center" id="friend-title"><%= t('friends.title') %></h1>
   <p class="text-center"><%= t('friends.desc') %></p>
-  <div id="friends-container">
+  <div id="friends-container" >
     <% if(!@friendships.blank?) %>
       <% if(@friendships.size>0) %>
         <% @friendships.size.times do |friendIndex| %>

@@ -1,4 +1,5 @@
 class FriendshipsController < ApplicationController
+
   def create
     @user = User.find(params[:user_id])
     current_user.friendships.build(friend_id: @user.id)
@@ -9,10 +10,10 @@ class FriendshipsController < ApplicationController
       flash[:danger] =I18n.t 'friendship.add_friend_fail'
     end
     @userPodcasts = User.get_user_podcasts(params[:user_id])
-
     respond_to do |format|
       format.js { render partial: 'user_podcasts/user' }
     end
+
   end
 
   def destroy
@@ -42,4 +43,7 @@ class FriendshipsController < ApplicationController
       format.js { render partial: 'podcastapp/friends/friendsresult' }
     end
   end
+
+
+
 end

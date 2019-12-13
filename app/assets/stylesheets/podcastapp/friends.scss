@@ -10,7 +10,7 @@
 
 #friends-container {
   border-radius: 5px;
-      background-color: $nav-bottom-bg-color;
+    background-color: $nav-bottom-bg-color;
   display: flex;
   padding: 20px 20px;
 
@@ -19,9 +19,10 @@
 #friend-item {
   border-radius: 5px;
   padding: 30px 30px 0px 30px;
-
+  flex:1;
   div{
     padding: 5px 5px;
+    flex:1;
     img {
       border-radius: 20px;
       width: 260px;

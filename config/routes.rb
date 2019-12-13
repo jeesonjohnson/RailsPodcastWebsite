@@ -11,10 +11,6 @@ Rails.application.routes.draw do
 
   get '/app/search', to: 'podcastapp#search'
 
-  get '/app/findfriends', to: 'podcastapp#find_friends'
-
-  get '/app/friends', to: 'podcastapp#friends_view'
-
   get '/searchpodcasts', to: 'podcast#search'
 
   get '/podcast', to: 'podcastapp#find_episode'
@@ -27,7 +23,9 @@ Rails.application.routes.draw do
   get '/profile/:id', to: 'user_podcasts#get_profile', as: 'user_profile'
 
 
-
+  # Appropriate routes for friendship controller
   resource :friendships, only: [:create,:destroy]
   get '/searchfriends', to: 'friendships#search_friends'
+  get '/app/findfriends', to: 'friendships#find_friends'
+  get '/app/friends', to: 'friendships#friends_view'
 end

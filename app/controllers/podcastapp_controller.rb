@@ -28,19 +28,6 @@ class PodcastappController < ApplicationController
     end
   end
 
-  def find_friends
-    respond_to do |format|
-      format.js { render partial: 'podcastapp/friends/find_friends' }
-    end
-  end
-
-  def friends_view
-    @friendships=current_user.friends
-    respond_to do |format|
-      format.js { render partial: 'podcastapp/friends/friends' }
-    end
-  end
-
 
 
 end

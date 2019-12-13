@@ -44,12 +44,21 @@ class FriendshipsController < ApplicationController
     end
   end
 
+=begin
+  Below method is responsible for displaying a view to the user that allows the user to search for friends.
+  Which is rendered as a partial using AJAX.
+=end
 
   def find_friends
     respond_to do |format|
       format.js { render partial: 'podcastapp/friends/find_friends' }
     end
   end
+
+  =begin
+    Below method finds all associated friends for the current logged in user, and displys them in an appropraite way.
+    Result of friends request for current user is returned to the user as a variable @friendships
+  =end
 
   def friends_view
     @friendships=current_user.friends

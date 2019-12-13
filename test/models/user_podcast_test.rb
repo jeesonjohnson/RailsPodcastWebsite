@@ -1,7 +1,11 @@
 require 'test_helper'
 
 class UserPodcastTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  def setup
+    @user=users(:one)
+  end
+
+  test 'Ensure user asosication to podcasts can be made' do
+    assert_equal UserPodcast.count, 3
+  end
 end

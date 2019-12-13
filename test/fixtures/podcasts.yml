@@ -1,11 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  author: MyString
-  rsslink: MyString
+  name: Snacks Daily
+  author: Snacks
+  rsslink: http://feeds.feedburner.com/marketsnacks-daily
+  image_url: https://megaphone-prod.s3.amazonaws.com/podcasts/6f5e0684-0f62-11e9-8892-c3999a92d94d/image/uploads_2F1572397783054-6o9dpywwwhw-d0dae8b553156c24ea5f76003bd5b130_2FSnacks%2BSquare%2BLogo.png
+  itunes_id: 1386234384
+
 
 two:
-  name: MyString
-  author: MyString
-  rsslink: MyString
+  name: Freakonomics Radio
+  author: Freakonomics
+  rsslink: https://rss.art19.com/freakonomics-radio
+  image_url: https://content.production.cdn.art19.com/images/01/73/7e/02/01737e02-609c-40c0-8cb1-6c010b5a170b/7300ad8b177115c141228ae24897bb5b828ba645232b5732ec43d9610a782138cd3d69d0c88f44559420c2ded82022e03600e57040740f1c7b42c93bfc06a675.jpeg
+  itunes_id: 354668519
+
+three:
+  name: The Joe Rogan Experience
+  author: Joe Rogan
+  rsslink: http://joeroganexp.joerogan.libsynpro.com/rss
+  image_url: http://static.libsyn.com/p/assets/7/1/f/3/71f3014e14ef2722/JREiTunesImage2.jpg
+  itunes_id: 360084272

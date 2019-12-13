@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  user: one
-  podcast: one
+  user_id: 1
+  podcast_id: 1
 
 two:
-  user: two
-  podcast: two
+  user_id: 1
+  podcast_id: 2
+
+three:
+  user_id: 2
+  podcast_id: 1

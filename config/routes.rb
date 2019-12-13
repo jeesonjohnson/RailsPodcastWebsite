@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'welcome#home'
-
   get '/contact', to: 'welcome#contact'
   post 'request_contact', to: 'welcome#request_contact'
+
 
   get '/app', to: 'podcastapp#home'
 
@@ -18,9 +18,6 @@ Rails.application.routes.draw do
   get '/searchpodcasts', to: 'podcast#search'
 
   get '/podcast', to: 'podcastapp#find_episode'
-
-
-
 
   get '/playaudio', to: 'podcast#playaudio'
 

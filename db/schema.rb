@@ -22,13 +22,13 @@ ActiveRecord::Schema.define(version: 2019_11_29_221052) do
   end
 
   create_table "podcasts", force: :cascade do |t|
-    t.string "name"
-    t.string "author"
-    t.string "rsslink"
+    t.string "name", null: false
+    t.string "author", default: ""
+    t.string "rsslink", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.text "image_url"
-    t.text "itunes_id"
+    t.text "image_url", default: "", null: false
+    t.text "itunes_id", default: "", null: false
   end
 
   create_table "user_podcasts", force: :cascade do |t|
@@ -53,8 +53,8 @@ ActiveRecord::Schema.define(version: 2019_11_29_221052) do
     t.string "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "first_name"
-    t.string "last_name"
+    t.string "first_name", default: "error", null: false
+    t.string "last_name", default: "error", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

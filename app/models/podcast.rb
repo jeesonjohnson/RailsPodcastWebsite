@@ -7,10 +7,11 @@ require 'feedjira'
 class Podcast < ApplicationRecord
   has_many :user_podcast
   has_many :users, through: :user_podcasts
-  validates :itunes_id, presence:true, uniqueness: true
+  validates :itunes_id, presence:true,length: {minimum: 2}, uniqueness: true
   validates :name, presence:true
-  validates :rsslink, presence:true, uniqueness:true
+  validates :rsslink, presence:true,length: {minimum: 5}, uniqueness: true
 
+  
 
 
   def self.new_podcast_search(search_term)
@@ -30,7 +31,7 @@ class Podcast < ApplicationRecord
   def self.add_podcast_to_db(itunes_id, image_url, podcast_name)
     @podcast = Podcast.where('itunes_id = ' + itunes_id)[0]
     if @podcast.blank?
-      @podcast = Podcast.create(name: podcast_name, author: '', rsslink: episode_feed_finder(itunes_id), itunes_id: itunes_id, image_url: image_url)
+      @podcast = Podcast.create(name: podcast_name, author: podcast_name, rsslink: episode_feed_finder(itunes_id), itunes_id: itunes_id, image_url: image_url)
       @podcast.save
       return @podcast
     else

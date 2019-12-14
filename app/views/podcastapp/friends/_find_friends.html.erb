@@ -1,6 +1,9 @@
+<!-- A field is presented to the user that allows the user to search for friends, and
+appropriatly associate them with the given user. -->
 <div class="jumbotron">
   <h1 class="text-center" id="main-title"><%= t('find_friends.title') %></h1>
   <div id="pod-search-div">
+    <%# Associated form that allows user search query to be entered %>
     <%= form_tag searchfriends_path,remote: true, method: :get, id: "podcast-lookup-form" do%>
     <div class="form-group row no-padding text-center col-md-12">
       <div class="col-md-10">
@@ -21,4 +24,5 @@
 
 </div>
 
+<!-- Result of frieend search will be rendered in the below div -->
 <div id="results"></div>

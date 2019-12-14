@@ -1,3 +1,5 @@
+<%# Appropriate validation is provided to the user podcasts, if and only if the podcasts are present
+is the user presented with an assocaited viewm otheriwse an error is presented to the user.. %>
 <% if @podcast%>
   <% if @podcast["results"].size>0 %>
     <% @podcast["results"].size.times do |podIndex| %>

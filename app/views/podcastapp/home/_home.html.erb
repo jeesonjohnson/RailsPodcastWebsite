@@ -1,3 +1,7 @@
+<!-- Home has 2 associated views, this being due to 2 requests being able to be made
+one being an AJAX reuqest and other being a normal rails request, and thus an associated
+view are found in the podcastapp folder. This needs to be done to ensure the functionality of
+the application to be functioning from within a single page. -->
 <div class="container well overall-home-styling">
   <h1 id="main-title" class="text-center"><%= t('home.title') %></h1>
   <br/>
@@ -5,15 +9,20 @@
     <div style="flex:2">
       <h2 id="home-episode-title" class="text-center"><%= t('home.sub_title') %></h2>
       <div class="flex-container-homepage" style="flex:2;">
+        <%# A given users associated podcasts are presented to the user, if said
+        podcasts exist otherwise an associated error is presented to the user. %>
         <% if(@userPodcasts.size >0)%>
           <% @userPodcasts.size.times do |podIndex| %>
             <div class="flex-container-homepage-item ">
+              <%# The option is given to the user to click on the given podcast, and be presented with
+              the assocaited podcast item. %>
               <%= link_to podcast_path(:itunes_id => @userPodcasts[podIndex]["itunes_id"]),class:"loading-available-button", remote: true do %>
               <%= image_tag(@userPodcasts[podIndex]["image_url"], {:class => "home-container-image"}) %>
             <% end %>
           </div>
         <%end%>
       <%else %>
+      <!-- Assosicated error if the user does not have any friends -->
         <div class="flex-container-homepage-item ">
           <h4><%= t('home.no_podcasts_error') %></h4>
         </div>
@@ -26,7 +35,9 @@
     <h2 id="home-episode-title" class="text-center"><%= t('home.trending') %></h2>
     <div class="top-podcasts-style">
       <div style="flex:1;padding-right:16px;">
-
+        <%# The top most podcast's are presented to the user, if and only if the there has been
+        no error in generating the top podcasts list, if so, an assocaited error is presented
+        to the user. %>
         <% if(@topPodcasts.size >0) %>
           <% @topPodcasts.size.times do |podIndex| %>
 
@@ -44,6 +55,8 @@
 
             </div>
             <div style="flex:6;padding-top:33px;">
+              <!-- Marquee text is presented to the user through means of CSS, which allows hte user to ahve a better overal user
+              experiance reagarding the podcasts. -->
               <p class="marquee">
                 <span id="marquee-text">
 

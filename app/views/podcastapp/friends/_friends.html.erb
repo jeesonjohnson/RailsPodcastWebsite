@@ -2,6 +2,9 @@
   <h1 class="text-center" id="friend-title"><%= t('friends.title') %></h1>
   <p class="text-center"><%= t('friends.desc') %></p>
   <div id="friends-container" >
+    <%# If and only if a user has friends, and said results of friendships are greater
+    than 0, is the user presented with the associated view, otherwise an error is
+    presented to the user; depending on the type of error. %>
     <% if(!@friendships.blank?) %>
       <% if(@friendships.size>0) %>
         <% @friendships.size.times do |friendIndex| %>

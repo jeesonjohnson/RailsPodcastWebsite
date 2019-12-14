@@ -1,4 +1,7 @@
 <div id="find-friends-main">
+  <%# Validation is provided to the results of the friends search if and only if the
+  user search request is valid is the user presented with results, otherwise the user is
+  presented with an error that indicates that associated error. %>
   <% if(@search) %>
     <% if(@search.entries.size>0) %>
 

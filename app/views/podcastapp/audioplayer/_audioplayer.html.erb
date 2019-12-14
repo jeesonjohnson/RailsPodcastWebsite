@@ -5,6 +5,8 @@
     </div>
     <div style="flex:3;padding-top:10px;padding-right:20px;" class="center">
       <audio controls="controls" style="width:100%;" autoplay="autoplay" loop="loop">
+        <!-- Depending on the audio link that the user clicks, the assciated audio stream is loaded
+        and presented to the user in a way to interact with the given sound track -->
         <source src="<%= params["audioUrl"] %>" type="audio/ogg"/>
         <source src="<%= params["audioUrl"] %>" type="audio/mpeg"/>
         <%= t('audio_player.error') %>

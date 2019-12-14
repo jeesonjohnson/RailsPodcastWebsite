@@ -1,3 +1,6 @@
+<%# Provided that the user account is found an approparite view is presented to the
+user however if an error is found in the request, then an appropriate error
+message is presented to the user.  %>
 <% if(!@user.blank?) %>
   <div class="container" id="overall-friend-container">
     <div class="row">
@@ -12,6 +15,8 @@
           <p class="text-center"><%= t('user.default_user_text') %></p>
           <div id="user-age">
             <div id="user-data" class="pull-left">
+              <!-- As an ester egg, depending on the age of the user's account an appropraite
+              age badge is given to the user, which each represent a an animated figure. -->
               <a ><%=t('user.account')+ (@user.account_creation_date.to_s)+t('user.account_age')%></a>
               <%if(@user.account_creation_date<5) %>
                 <%= image_tag "new_egg.gif"%>
@@ -23,6 +28,12 @@
               </div>
 
               <div id="follow-friend" class="pull-right">
+
+                <%# Depending on the assosication the current logged in user, has to the user profile
+                an appropriate action is presented to the user, where in which if a user is a friend,
+                they are presented with teh ability to unfriend the given user, similarly if a given user
+                is not a friend an option to befrend the user. Further if the given user profile is that of
+                the current user the user is presented with the option to edit thier own account. %>
                 <% if (current_user.id==@user.id) %>
                 <%= link_to t('user.edit'),edit_user_registration_path(current_user), class:"btn btn-primary btn-lg text-center loading-available-button", id:"follow-friend-button", method: :get, style:"background-color:red;"%>
                 <%else%>
@@ -42,13 +53,11 @@
     <h3 id="user-podcasts-main-title" style="font-size:40px"> <%= t('user.podcast_word') %> </h3>
 
     <div id="user-account-pod-display">
+      <%# Depending on the user porfile, the podcast episodes that are assosicated with the user are presented
+      to the user, further validation is provided to the given user's podcasts. %>
       <% if(@userPodcasts.size >0)%>
         <% @userPodcasts.size.times do |podIndex| %>
-
           <div>
-
-
-
             <%= link_to podcast_path(:itunes_id => @userPodcasts[podIndex]["itunes_id"]),  method: :get, remote: true, class:"loading-available-button" do %>
             <%= image_tag(@userPodcasts[podIndex]["image_url"], {:class => "home-container-image loading-available-button" }) %>
           <% end %>
@@ -56,16 +65,12 @@
       <%end%>
     <%else %>
       <div>
-
         <h4><%= t('user.no_podcasts') %></h4>
-
       </div>
       <% end %>
-
     </div>
-
   <%else%>
-
+    <!-- Validation is provided, weather the user account exsits, if not an error is presented to the given user. -->
     <div class="flex-container-homepage-item ">
       <h4><%= t('user.error_cannot_find_profile') %></h4>
       <p><%= t('user.error_account_delete') %></p>

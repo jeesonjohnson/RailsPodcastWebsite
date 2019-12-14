@@ -1,31 +1,22 @@
 //Imports appropraite constants used throught css. Mainly coulour constants
 @import 'constants';
-
 //Changing default bootstrap navbar values
 $navbar-height: 120px;
 $navbar-default-bg: $overall-background;
 $navbar-default-link-color: $overall-text-color;
 $navbar-default-link-hover-color: $overall-secondary-yellow;
-
 //Overall Body
 $body-bg: $overall-background;
-
 //Setting default bootstrap text color
 $text-color: $overall-text-color;
-
 //Setting default bootstrap Jumbotron values
 $jumbotron-bg: $overall-secondary-bg-color;
 $jumbotron-heading-color: $overall-text-color;
-
 @import "bootstrap-sprockets";
 @import "bootstrap";
-
-
-
 //Styling for overall application
-*{
-padding: 0;
-
+* {
+  padding: 0;
 }
 
 .center {
@@ -44,29 +35,50 @@ padding: 0;
   font-weight: bold;
 }
 
+#generic-container {
+  background: $nav-bottom-bg-color;
+  border-radius: 20px;
+  h1 {
+    font-weight: bold;
+    font-size: 50px;
+  }
 
 
-
+  div {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    h4 {
+      padding-top: 40px;
+      font-weight: bold;
+      font-size: 50px;
+      color: $logo-highlight-color;
+    }
+    h1 {
+      font-weight: bold;
+      font-size: 50px;
+    }
+  }
+  #back-button{
+    width:200px;
+  }
+}
 //Loading indicator styling
-#loading-indicator{
+#loading-indicator {
   width: 100%;
 }
 
 #loading-text {
-    position: relative;
-    font-weight: bold;
-    color:$logo-highlight-color;
-    font-size: 5em
+  position: relative;
+  font-weight: bold;
+  color: $logo-highlight-color;
+  font-size: 5em;
 }
-
-
 //Below styles are styles used throught the application, to provide a consitnt layout.
-#main-title{
+#main-title {
   font-weight: bold !important;
   font-size: 70px;
 }
-
-
 
 #logo {
   float: left;
@@ -89,8 +101,7 @@ padding: 0;
   align-content: center;
   display: block;
   border-radius: 15px 15px 15px 15px;
-
-  border: 0px;
+  border: 0;
   font-weight: 700 !important;
   font-size: 1.5em;
   color: black;
@@ -98,11 +109,10 @@ padding: 0;
   align-content: center;
   text-decoration: none;
 }
-
 //Note !important is required, to override Bootstrap defaults for hovering over button
 .login-button:hover {
   margin-top: 30px !important;
-  width: 120px ;
+  width: 120px;
   height: 45px;
   border-radius: 15px 15px 15px 15px !important;
   background-color: #2fb45a !important;

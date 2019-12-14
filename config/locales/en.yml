@@ -58,6 +58,9 @@ en:
     app_dec4: "Stream."
     sign_up_now: "Sign up now!"
 
+  about:
+    title: "About us"
+
   contact:
     title: "Contact us"
     description: "We try our very best to provide the best user experiance possible, if you have any errors

@@ -38,3 +38,16 @@
   }
 
 }
+#about-us-container{
+  background: $nav-bottom-bg-color;
+  border-radius: 20px;
+  div{
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-bottom: 20px;
+    h1{
+      font-weight: bold;
+      font-size: 50px;
+    }
+  }
+}

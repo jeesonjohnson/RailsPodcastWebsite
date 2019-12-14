@@ -24,6 +24,25 @@ class WelcomeControllerTest < ActionDispatch::IntegrationTest
     sign_in users(:one)
     get '/'
     assert_response :redirect
+    sign_out users(:one)
+  end
+
+
+
+  # If a user is not signed in the default homepage should be presented
+  test "Get application about page" do
+    get about_url
+    assert_response :success
+    assert_template layout: 'application'
+    assert_select 'title', I18n.t('app_title')
+    assert_select 'h1', I18n.t('app_desciption')
+  end
+
+  # If a user is already logged in, the podcat app should be presented to the user.
+  test "Redirect to application if signed in" do
+    sign_in users(:one)
+    get '/'
+    assert_response :redirect
   end
 
 end

@@ -18,7 +18,7 @@ class PodcastControllerTest < ActionDispatch::IntegrationTest
   test 'Test searching for podcasts given a search term' do
     # Search result after request to api's and such, should return a view with a list of podcasts, which incldues the name of the podcast
     # This being as @episode_data.title is a valid existing podcast
-    get '/searchpodcasts', params: { podcast: @episode_data[:title] }, xhr: true
+    get '/searchpodcasts', params: { podcast_search: @episode_data[:title] }, xhr: true
     assert_response :success
     assert body.include? @episode_data[:title]
   end

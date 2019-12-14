@@ -4,7 +4,7 @@
     <%= form_tag searchpodcasts_path,remote: true, method: :get, id: "podcast-lookup-form" do%>
     <div class="form-group row no-padding text-center col-md-12">
       <div class="col-md-10">
-        <%= text_field_tag :podcast, params[:podcast], placeholder: t('search.enter_pod'), autofocus: true, class: "form-control search-box input-lg"%>
+        <%= text_field_tag :podcast, params[:podcast_search], placeholder: t('search.enter_pod'), autofocus: true, class: "form-control search-box input-lg"%>
       </div>
 
       <div class="col-md-2">

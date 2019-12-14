@@ -49,7 +49,7 @@ en:
     welcome: "Welcome Home"
 
   footer:
-    copyright: "Copyright © Jeeson Johnson | About Us | Contact Us"
+    copyright: "Copyright © Jeeson Johnson | "
 
   homepage:
     app_dec1: "Grow."
@@ -59,7 +59,10 @@ en:
     sign_up_now: "Sign up now!"
 
   contact:
-    title: "Contact us for more information"
+    title: "Contact us"
+    description: "We try our very best to provide the best user experiance possible, if you have any errors
+                  whilst using the application feel free to contact us, and we will try to get back to you as
+                  soon as possible"
     contact_us: "Complete the following form to contact us"
     name: "Name"
     email: "Email"

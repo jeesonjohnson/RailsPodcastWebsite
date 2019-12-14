@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # Home page application routes
   root 'welcome#home'
   get '/contact', to: 'welcome#contact'
+  get '/about', to: 'welcome#about'
   post 'request_contact', to: 'welcome#request_contact'
 
   # Main podcast application routes

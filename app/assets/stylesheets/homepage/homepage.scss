@@ -73,3 +73,10 @@
     -moz-transform: translate(0px, -19.5em);
   }
 }
+#footer-text{
+  color: white;
+  text-decoration: none;
+  a{
+    color: $logo-highlight-color;
+  }
+}

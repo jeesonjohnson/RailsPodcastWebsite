@@ -6,8 +6,8 @@ class WelcomeControllerTest < ActionDispatch::IntegrationTest
     get contact_url
     assert_response :success
     assert_template layout: 'application'
-    assert_select 'title', 'Podly'
-    assert_select 'h1', 'Contact us for more information'
+    assert_select 'title', I18n.t('app_title')
+    assert_select 'h1', I18n.t('contact.title')
   end
 
   # If a user is not signed in the default homepage should be presented
@@ -15,8 +15,8 @@ class WelcomeControllerTest < ActionDispatch::IntegrationTest
     get '/'
     assert_response :success
     assert_template layout: 'application'
-    assert_select 'title', 'Podly'
-    assert_select 'h1', 'Welcome to the best podcast app'
+    assert_select 'title', I18n.t('app_title')
+    assert_select 'h1', I18n.t('app_desciption')
   end
 
   # If a user is already logged in, the podcat app should be presented to the user.

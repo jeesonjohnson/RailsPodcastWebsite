@@ -1,5 +1,5 @@
 <%- if controller_name != 'podcastapp' %>
   <footer class="container center">
-    <p style="padding:20px 0px;"><%= t('footer.copyright') %></p>
+    <p style="padding:20px 0px;" id="footer-text"><%= t('footer.copyright') %><%= link_to t('home_navbar.contact'), contact_path %> |  <%= link_to t('home_navbar.about'), about_path %></p>
   </footer>
 <%end%>

@@ -1,8 +1,8 @@
-<h1 style="font-weight: bold;">Log in</h1>
+<h1 style="font-weight: bold;"><%= t('log_in')%></h1>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
-  
+
    <h3><%= f.label :email %></h3>
   <div class="input-group input-group-lg">
   <span class="input-group-addon" id="sizing-addon1">Email</span>
@@ -14,7 +14,7 @@
 
   <div class="input-group input-group-lg">
   <span class="input-group-addon" id="sizing-addon1"><%= f.label :password %> </span>
-  
+
     <%= f.password_field :password, autocomplete: "new-password",class: "form-control", style: "width:600px;height:50px" %>
 
   </div><br />

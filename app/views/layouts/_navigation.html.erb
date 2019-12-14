@@ -15,10 +15,10 @@
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navbar-right">
           <li>
-            <a href="#"><%=t('home_navbar.about')%></a>
+            <%= link_to t('home_navbar.about'), about_path %>
           </li>
           <li>
-            <a href="#"><%=t('home_navbar.contact')%></a>
+            <%= link_to t('home_navbar.contact'), contact_path %>
           </li>
           <li>
             <div><%= link_to t("log_in"), user_session_path, class: "btn btn-default login-button" %></div>

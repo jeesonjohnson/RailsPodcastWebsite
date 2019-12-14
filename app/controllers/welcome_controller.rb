@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
     end
 
     # Allows the user to be request and send a message to the applciation developers
-    # regarding the applciation, and any other relevant queires. 
+    # regarding the applciation, and any other relevant queires.
     def request_contact
       name = params[:name]
       email = params[:email]
@@ -22,6 +22,11 @@ class WelcomeController < ApplicationController
         flash[:notice] = I18n.t('contact.yes_email')
       end
       redirect_to root_path
+    end
+
+
+    def about
+
     end
 
 

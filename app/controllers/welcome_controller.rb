@@ -24,7 +24,7 @@ class WelcomeController < ApplicationController
       redirect_to root_path
     end
 
-
+    # View that presents the user about information regarding the application, and its purpose.
     def about
 
     end

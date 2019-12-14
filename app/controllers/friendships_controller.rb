@@ -37,7 +37,6 @@ class FriendshipsController < ApplicationController
       @search = nil
     else
       @search = User.search(params[:friend_search_query])
-      puts params[:friend_search_query]
   end
     respond_to do |format|
       format.js { render partial: 'podcastapp/friends/friendsresult' }

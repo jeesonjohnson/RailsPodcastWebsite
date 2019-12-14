@@ -1,5 +1,13 @@
 class UserPodcastsController < ApplicationController
 
+  def get_profile
+    @userPodcasts = User.get_user_podcasts(params[:id])
+    @user = User.find(params[:id])
+    respond_to do |format|
+      format.js { render partial: 'user_podcasts/user' }
+    end
+  end
+
   def create
     podcast=Podcast.add_podcast_to_db(params[:itunes_id],params[:image_url],params[:name])
     @user_podcast = UserPodcast.create(user:current_user, podcast:podcast)
@@ -12,8 +20,6 @@ class UserPodcastsController < ApplicationController
     respond_to do |format|
       format.js { render partial: 'podcastapp/episode/find_episode' }
     end
-
-
   end
 
 
@@ -34,11 +40,5 @@ class UserPodcastsController < ApplicationController
   end
 
 
-  def get_profile
-    @userPodcasts = User.get_user_podcasts(params[:id])
-    @user = User.find(params[:id])
-    respond_to do |format|
-      format.js { render partial: 'user_podcasts/user' }
-    end
-  end
+
 end

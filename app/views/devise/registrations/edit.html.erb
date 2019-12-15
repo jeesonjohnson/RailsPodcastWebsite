@@ -32,6 +32,14 @@
     </div>
   </div>
 
+  <div>
+    <h3><%= f.label :description %></h3>
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="sizing-addon1"><%= f.label :description %></span>
+      <%= f.text_field :description, autocomplete: "description", class: "form-control", style: "height:50px"%>
+    </div>
+  </div>
+
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div><%= t('custom.edit.waiting') %>
       <%= resource.unconfirmed_email %></div>

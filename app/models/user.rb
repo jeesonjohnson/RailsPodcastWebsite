@@ -8,6 +8,7 @@ class User < ApplicationRecord
   # Validates all user specific fields, to prevent user errors.
   validates :first_name, length: {minimum: 2, maximum: 30}, presence:true
   validates :last_name, length: {minimum: 2, maximum: 30}, presence:true
+  validates :description, length: {minimum: 2, maximum: 70}
 
   # User associations to podcasts
   has_many :user_podcasts

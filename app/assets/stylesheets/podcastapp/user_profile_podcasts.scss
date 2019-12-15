@@ -11,6 +11,7 @@
 #overall-friend-container {
   background-color: $nav-bottom-bg-color;
   border-radius: 20px;
+
 }
 
 #user-profile-pic {
@@ -37,10 +38,12 @@
 
   p {
     flex: 1;
+    flex-wrap: wrap;
     padding-top: 50px;
     padding-bottom: 50px;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
+    width: 320px;
   }
 
   div#user-age {

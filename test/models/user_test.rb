@@ -46,6 +46,20 @@ class UserTest < ActiveSupport::TestCase
     @user.destroy
   end
 
+  test 'Ensure default user description' do
+    # The user does not currently have an associated description, thus a default
+    # description should be given to the user.
+    @user.save
+    assert @user.description.length>3 # Check a given default message is given
+    @user.destroy
+  end
+
+  test 'Ensure max size of user descrption length to be 70 characters' do
+    # User description should be limited to character length of 70 characters
+    @user.description="a"*71
+    assert_not @user.valid?
+  end
+
 
 
 end

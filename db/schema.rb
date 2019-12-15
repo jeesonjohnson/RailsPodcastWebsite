@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_29_221052) do
+ActiveRecord::Schema.define(version: 2019_12_15_003519) do
 
   create_table "friendships", force: :cascade do |t|
     t.integer "user_id"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2019_11_29_221052) do
     t.datetime "updated_at", null: false
     t.string "first_name", default: "", null: false
     t.string "last_name", default: "", null: false
+    t.text "description", default: "Hello World from user!", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -7,7 +7,7 @@ class PodcastappController < ApplicationController
   # response or as a view, where in which the view is presented the users top
   # podcasts, and the current top podcasts.
   def home
-    @userPodcasts = User.get_user_podcasts(current_user.id)
+    @userPodcasts=current_user.podcasts
     @topPodcasts = Podcast.get_top_podcasts
     # Checks if the user request is an AJAX request, if so renders approrpaitly
     if request.xhr?

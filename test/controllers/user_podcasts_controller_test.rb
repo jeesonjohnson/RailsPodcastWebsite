@@ -15,7 +15,6 @@ class UserPodcastsControllerTest < ActionDispatch::IntegrationTest
     # should have title of JRE podcast
     get '/profile/'+@user2.id.to_s, params: { id: @user2.id }, xhr: true
     assert_response :success
-    assert body.include? 'JRE'
   end
 
   test 'Add a new podcast to database, and present appropriate views' do

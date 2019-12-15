@@ -3,8 +3,8 @@ class UserPodcastsController < ApplicationController
   # The response provides to the view, all associated podcasts that the user has
   # along with the actual user details.
   def get_profile
-    @userPodcasts = User.get_user_podcasts(params[:id])
     @user = User.find(params[:id])
+    @userPodcasts = User.get_user_podcasts(params[:id])
     # Renders appropriate partial to user
     respond_to do |format|
       format.js { render partial: 'user_podcasts/user' }

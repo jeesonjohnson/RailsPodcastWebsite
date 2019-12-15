@@ -36,16 +36,10 @@ class User < ApplicationRecord
   # and provides them in such a manor that it is easy to parse in views, essentailly
   # in JSON format.
   def self.get_user_podcasts(user_id)
-    userPods = UserPodcast.where('user_id = ' + user_id.to_s)
-    podcasts = []
-    userPods.size.times do |podIndex|
-      pod=Podcast.where("id = " + userPods[podIndex]["id"].to_s).first
-      # This if check is to prevent errors from occuring when multiple soam requests are made to the function
-      if(!pod.blank?)
-        podcasts.push(pod)
-      end
-    end
-    return podcasts
+    @user = User.find(user_id)
+    @userPodcasts = @user.podcasts
+    return @userPodcasts
+
   end
 
   # Returns the current users full name in correctly formated function.

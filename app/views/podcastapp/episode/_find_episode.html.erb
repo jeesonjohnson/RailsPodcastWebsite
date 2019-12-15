@@ -6,7 +6,7 @@ the user %>
   <div class="jumbotron container pod-item podcast-episode-jumbotron">
     <%= image_tag(@podcast.image.url, {:class => "podcast-logo pull-left"}) %>
     <h1 class="text-center pod-table-heading"><%= @podcast.title %></h1>
-    <h4 class="text-center "><%= raw @podcast.description %></h4>
+    <h4 class="text-center " style="padding-left:30px;"><%= raw @podcast.description %></h4>
     <%= link_to t('find_episodes.website'), "http://"+@podcast.url, :target => "_blank", class: "text-center website-link-style", style: "padding-left:20px;" %>
     <% if !(current_user.podcast_already_subscribed(params[:itunes_id],current_user.id)) %>
       <%= link_to t('subscribe'),user_podcasts_path(user:current_user,itunes_id: params[:itunes_id],name:@podcast.title,image_url:@podcast.image.url), class:"btn btn-primary btn-lg pull-right podcast-button-style", method: :post, remote: true%>
@@ -25,13 +25,18 @@ the user %>
       </div>
       <div style="flex:4">
         <h2 id="episode-title"><%=@podcast.entries[podIndex].title%></h2>
-        <p style="padding-left:80px" class="pod-description-style"><%=raw @podcast.entries[podIndex].summary%></p>
+        <div id="scroll-text-box">
+          <div id="scrollable-textbox">
+              <%=  raw @podcast.entries[podIndex].summary%>
+          </div>
+        </div>
       </div>
     </div>
     <br/>
   <% end %>
 
 </div>
+<br/><br/><br/><br/><br/>
 <% else %>
   <h1><%= t('find_episodes.error') %></h1>
 <%end%>

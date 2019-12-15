@@ -9,42 +9,56 @@
   }
 }
 
-.pod-description-style{
-  color:grey !important;
+.pod-description-style {
+  color: grey !important;
 }
 
-
-.website-link-style{
+.website-link-style {
   font-size: 18px !important;
   font-weight: 500;
   text-decoration: none;
   color: $overall-secondary-yellow !important;
 }
-.website-link-style:hover{
+
+.website-link-style:hover {
   font-size: 18px !important;
   font-weight: bold;
   text-decoration: none;
   color: $overall-secondary-yellow;
 }
-.episode-list-style{
-  display:flex;
+
+.episode-list-style {
+  display: flex;
   flex-wrap: wrap;
   background-color: $nav-side-bg-color !important;
-
 }
-#episode-title{
+
+#episode-title {
   font-weight: 700;
   padding-left: 50px !important;
   color: $overall-secondary-yellow !important;
 }
 
-.play-icon-style{
-  font-size: 200px !important;;
-  text-decoration: none !important;;
+.play-icon-style {
+  font-size: 200px !important;
+  text-decoration: none !important;
 }
 
-.play-icon-style:hover{
+.play-icon-style:hover {
   font-size: 200px !important;
   text-decoration: none !important;
   color: $logo-highlight-color;
+}
+
+#scroll-text-box {
+  padding-left: 80px;
+
+}
+
+#scrollable-textbox {
+  color: grey !important;
+  height: 220px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  font-size: 20px;
 }

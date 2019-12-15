@@ -8,9 +8,6 @@ User.create!([
   {email: "george@gmail.com", password:"georgegeorge",password_confirmation: "georgegeorge", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 0, current_sign_in_at: nil, last_sign_in_at: nil, current_sign_in_ip: nil, last_sign_in_ip: nil, first_name: "George", last_name: "Washington", description: "Don't speak to me unless you also founded a country."}
 ])
 
-
-
-
 Friendship.create!([
   {user_id: 1, friend_id: 2},
   {user_id: 1, friend_id: 3},

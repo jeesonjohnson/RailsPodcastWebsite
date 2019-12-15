@@ -9,7 +9,11 @@
         <div id="found-friends">
 
           <%= link_to user_profile_path(id:@search[searchIndex]["id"]), method: :get, remote: true do %>
-          <%= image_tag "profile.png" %>
+          <% if @search[searchIndex].avatar.attached? %>
+            <%= image_tag @search[searchIndex].avatar%>
+          <%else%>
+            <%= image_tag "profile.png"%>
+          <%end%>
         <% end %>
 
         <h2 class="text-center"><%= @search[searchIndex]["first_name"][0].upcase+@search[searchIndex]["first_name"][1,@search[searchIndex]["first_name"].size].downcase+"

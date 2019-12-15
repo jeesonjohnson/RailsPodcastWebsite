@@ -24,6 +24,26 @@
     </div>
   </div>
 
+  <div class="form-class">
+    <h3 style="font-weight:bold;"><%= t('registrations.profile_picture')%></h3>
+    <div class="row">
+      <div class="col-sm-6">
+        <div id="user-profile-pic">
+          <% if resource.avatar.attached? %>
+            <%= image_tag resource.avatar%>
+          <%else%>
+            <%= image_tag "profile.png"%>
+          <%end%>
+        </div>
+      </div>
+      <div class="col-sm-6">
+          <h4 style="font-size:30px;"> Choose your profile picture</h4>
+          <br/><br/>
+          <%= f.file_field :avatar, style: "font-size:20px" %>
+      </div>
+    </div>
+  </div>
+
   <div>
     <h3><%= f.label :email %></h3>
     <div class="input-group input-group-lg">
@@ -45,7 +65,6 @@
       <%= resource.unconfirmed_email %></div>
   <% end %>
 
-
   <div class="field">
 
     <h3><%= f.label :password %>
@@ -66,27 +85,26 @@
     </div>
   </div>
 
+  <div>
+    <h3><%= f.label :password_confirmation %></h3>
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="sizing-addon1"><%= t('custom.edit.confirm_password') %></span>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", style: "height:50px;"%>
+    </div>
+  </div>
+  <div>
+    <h3><%= f.label :current_password %>
+      <small>
+        <em>
+          <i><%= t('custom.edit.current') %></i>
+        </em>
+      </small>
 
-<div>
-  <h3><%= f.label :password_confirmation %></h3>
-  <div class="input-group input-group-lg">
-    <span class="input-group-addon" id="sizing-addon1"><%= t('custom.edit.confirm_password') %></span>
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", style: "height:50px;"%>
-  </div>
-  </div>
-<div>
-  <h3><%= f.label :current_password %>
-    <small>
-      <em>
-        <i><%= t('custom.edit.current') %></i>
-      </em>
-    </small>
-
-  </h3>
-  <div class="input-group input-group-lg">
-    <span class="input-group-addon" id="sizing-addon1"><%= t('custom.edit.current_password') %></span>
-    <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control", style: "height:50px;"%>
-  </div>
+    </h3>
+    <div class="input-group input-group-lg">
+      <span class="input-group-addon" id="sizing-addon1"><%= t('custom.edit.current_password') %></span>
+      <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control", style: "height:50px;"%>
+    </div>
   </div>
 
   <div class="actions">
@@ -100,6 +118,6 @@
 </div>
 
 <div>
-<%= link_to "Back", :back , class: "btn btn-default login-button", id: "back-button"%>
+  <%= link_to "Back", :back , class: "btn btn-default login-button", id: "back-button"%>
 </div>
 </div>

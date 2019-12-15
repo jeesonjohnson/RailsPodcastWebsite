@@ -6,7 +6,11 @@ message is presented to the user.  %>
       <div class="row">
         <div class="col-sm-4">
           <div id="user-profile-pic">
-            <%= image_tag "profile.png"%>
+            <% if @user.avatar.attached? %>
+              <%= image_tag @user.avatar%>
+            <%else%>
+              <%= image_tag "profile.png"%>
+            <%end%>
           </div>
         </div>
         <div class="col-sm-8">

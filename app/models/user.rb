@@ -17,6 +17,8 @@ class User < ApplicationRecord
   has_many :friendships
   has_many :friends, through: :friendships
 
+  has_one_attached :avatar
+
 
   # Provides fucntion to check if the current user is already subscrubed to a
   # a given podcast, a boolean response is returned.

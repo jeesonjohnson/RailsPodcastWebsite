@@ -49,30 +49,34 @@
   All appropraite styling for ability for user to find friends,
   as well as styling for friend search results
 */
-#find-friends-main{
+.friends-main-container{
   background-color: $nav-bottom-bg-color;
-  border-radius: 10px;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
   h3{
     padding: 50px 50px;
   }
-  display: flex;
-  padding: 20px 20px;
-}
-
-#found-friends{
-  padding: 20px 20px;
-  img{
-    border-radius: 10px;
-    width: 250px;
-    height: 250px;
-  }
-  h2 {
-    width: 260px;
-    white-space: nowrap;
-    overflow: hidden;
-    font-weight: bold;
-    text-overflow: ellipsis;
-    font-size: 26px;
-    color: $logo-highlight-color;
+  div{
+    padding-left: 30px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    // padding-right: 20px;
+    flex: 1;
+    img{
+      border-radius: 10px;
+      width: 250px;
+      height: 250px;
+    }
+    h2 {
+      width: 260px;
+      white-space: nowrap;
+      overflow: hidden;
+      font-weight: bold;
+      text-overflow: ellipsis;
+      font-size: 26px;
+      color: $logo-highlight-color;
+    }
   }
 }

@@ -8,7 +8,7 @@ en:
   log_in: "Log in"
   log_out: "Log Out"
   subscribe: "Subscribe!"
-  unsubscribe: "Unubscribe"
+  unsubscribe: "Unsubscribe"
 
   ##Pre main application locals.
   home_navbar:

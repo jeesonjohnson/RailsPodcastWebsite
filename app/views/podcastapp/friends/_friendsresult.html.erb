@@ -1,4 +1,4 @@
-<div id="find-friends-main">
+<div class="friends-main-container">
   <%# Validation is provided to the results of the friends search if and only if the
   user search request is valid is the user presented with results, otherwise the user is
   presented with an error that indicates that associated error. %>
@@ -6,8 +6,8 @@
     <% if(@search.entries.size>0) %>
 
       <% @search.entries.size.times do |searchIndex| %>
-        <div id="found-friends">
 
+        <div>
           <%= link_to user_profile_path(id:@search[searchIndex]["id"]), method: :get, remote: true do %>
           <% if @search[searchIndex].avatar.attached? %>
             <%= image_tag @search[searchIndex].avatar%>
@@ -28,5 +28,6 @@
 <% else %>
   <h3 class="text-center"><%= t('friends_result.no_accounts') %></h3>
 <%end %>
+
 
 </div>

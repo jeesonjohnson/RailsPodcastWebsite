@@ -1,14 +1,65 @@
 @import '../constants';
+// Appropriate styling for a podcast
+#main-episode-container {
+  background-color: $nav-side-bg-color;
+  width: 1170px !important;
+  border-radius: 10px;
 
-.podcast-episode-jumbotron {
-  background-color: $nav-side-bg-color !important;
+  div {
+    div {
+      padding-bottom: 20px;
 
-  h1 {
-    color: $green-title-color !important;
-    font-weight: bold !important;
+      h1 {
+        color: $green-title-color !important;
+        font-weight: bold !important;
+        font-size: 80px;
+      }
+
+      p {
+        font-size: 18px;
+        padding-left: 20px;
+        padding-top: 10px;
+        padding-right: 20px;
+        color: grey;
+      }
+
+      div#sub-options{
+        div{
+          padding-left: 300px;
+        }
+      }
+    }
   }
 }
 
+#episode-image-item{
+  padding-top: 20px;
+  padding-left: 50px;
+}
+
+#podcast-description-style{
+  padding-left: 20px !important;
+  padding-top: 10px !important;
+  padding-right: 30px !important;
+}
+
+a#subscribe-button {
+  width: 300px;
+  font-weight: bold;
+  background-color: $logo-highlight-color;
+  border: none;
+  color:black !important;
+}
+a#unsubscribe-button {
+  width: 300px !important;
+  font-weight: bold !important;
+  background-color: #CA3433 !important;
+  border: none !important;
+  color:black !important;
+}
+
+
+// Styling for approrpaite tags
 .pod-description-style {
   color: grey !important;
 }
@@ -50,9 +101,14 @@
   color: $logo-highlight-color;
 }
 
+.play-icon-style:active {
+  font-size: 200px !important;
+  text-decoration: none !important;
+  color: $logo-highlight-color;
+}
+
 #scroll-text-box {
   padding-left: 80px;
-
 }
 
 #scrollable-textbox {

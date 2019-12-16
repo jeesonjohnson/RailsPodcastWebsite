@@ -1,28 +1,25 @@
 <div class="container">
   <h1 class="text-center" id="friend-title"><%= t('friends.title') %></h1>
   <p class="text-center"><%= t('friends.desc') %></p>
-  <div id="friends-container" >
+  <div class="friends-main-container" >
     <%# If and only if a user has friends, and said results of friendships are greater
     than 0, is the user presented with the associated view, otherwise an error is
     presented to the user; depending on the type of error. %>
     <% if(!@friendships.blank?) %>
       <% if(@friendships.size>0) %>
         <% @friendships.size.times do |friendIndex| %>
+        <div>
+          <%= link_to user_profile_path(id:@friendships[friendIndex]["id"]), method: :get, remote: true, class: "loading-available-button" do %>
+          <% if @friendships[friendIndex].avatar.attached? %>
+            <%= image_tag @friendships[friendIndex].avatar%>
+          <%else%>
+            <%= image_tag "profile.png"%>
+          <%end%>
+          <% end %>
 
-          <div id="friend-item">
-            <div>
-              <%= link_to user_profile_path(id:@friendships[friendIndex]["id"]), method: :get, remote: true, class: "loading-available-button" do %>
-              <% if @friendships[friendIndex].avatar.attached? %>
-                <%= image_tag @friendships[friendIndex].avatar%>
-              <%else%>
-                <%= image_tag "profile.png"%>
-              <%end%>
-              <% end %>
-
-            <h2 class="text-center"><%= @friendships[friendIndex]["first_name"][0].upcase+@friendships[friendIndex]["first_name"][1,@friendships[friendIndex]["first_name"].size].downcase+"
-              "+@friendships[friendIndex]["last_name"][0].upcase+@friendships[friendIndex]["last_name"][1,@friendships[friendIndex]["last_name"].size].downcase %></h2>
-          </div>
-        </div>
+          <h2 class="text-center"><%= @friendships[friendIndex]["first_name"][0].upcase+@friendships[friendIndex]["first_name"][1,@friendships[friendIndex]["first_name"].size].downcase+"
+          "+@friendships[friendIndex]["last_name"][0].upcase+@friendships[friendIndex]["last_name"][1,@friendships[friendIndex]["last_name"].size].downcase %></h2>
+      </div>
 
       <%end%>
     <%end%>

@@ -123,3 +123,8 @@ en:
   ## Below are custom devise specific fields
   login:
     email: "Email"
+  edit:
+    cancel: "Cancel account"
+    confirm: "Are you sure?"
+    back: "Back"
+    edit: "Edit your account"

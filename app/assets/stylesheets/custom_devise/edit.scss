@@ -1,2 +1,92 @@
 //Imports appropraite constants used throught css. Mainly coulour constants
 @import 'constants';
+/*
+Below represents the appropriate layout, for the edit page of the podcast application
+*/
+#main-edit-container {
+  background-color: $nav-side-bg-color;
+  border-radius: 40px;
+  width: 1000px;
+  padding-bottom: 40px;
+
+  div {
+    div#profile-upload-div {
+      padding-left: 20px;
+      background-color: red;
+
+      h4 {
+        color: $logo-highlight-color;
+        font-size: 26px;
+        font-weight: bold;
+      }
+    }
+
+    div#field {
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-bottom: 20px;
+
+      input {
+        height: 50px;
+        font-size: 20px;
+        border-radius: 17px;
+      }
+
+      p {
+        font-size: 20px;
+        padding-left: 2px;
+
+        em {
+          color: grey;
+        }
+      }
+
+      input[type="submit"] {
+        width: 400px;
+        font-weight: bold;
+        background-color: $logo-highlight-color;
+        border: none;
+      }
+    }
+  }
+}
+
+#back-button-style {
+  left: 700px;
+}
+
+#edit-user-title {
+  h4 {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+
+#delete-account-container {
+  padding-top: 100px;
+
+  div#delete-account-div {
+    background-color: $nav-side-bg-color;
+    border-radius: 40px;
+    width: 1000px;
+    padding-bottom: 40px;
+
+    div {
+      padding: 20px;
+
+      div {
+        p{
+          padding-left: 20px;
+          font-size: 20px;
+        }
+        input[type="submit"],input[type="submit"]#hover {
+          border-radius: 20px;
+          background-color: maroon;
+          color: black;
+          width: 280px;
+          border: none;
+        }
+      }
+    }
+  }
+}

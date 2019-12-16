@@ -4,21 +4,15 @@ one:
   first_name: Jeeson
   last_name: Johnson
   email: admin@admin.com
-  # password: adminadmin
-  # encypted_password: <%= User.new.send(:password_digest, 'adminadmin') %>
 
 two:
   id: 2
   first_name: Elon
   last_name: Musk
   email: elon@x.com
-#   password: elonelon
-#   password_confirm: elonelon
-#
+
 three:
   id: 3
   first_name: Bill
   last_name: Gates
   email: bill@microsoft.com
-#   password: billbill
-#   password_confirm: billbi

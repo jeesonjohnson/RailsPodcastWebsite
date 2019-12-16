@@ -1,62 +1,43 @@
-<div class="container" id="generic-container">
-  <h1 class="text-center"><%= t('sign_up') %></h1>
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <div><%= render "devise/shared/error_messages", resource: resource %></div>
+  <div class="container" id="main-register-container">
+    <div class="row">
+      <div class="col-sm-12">
+        <%= render "devise/shared/error_messages", resource: resource %>
+      </div>
+      <div class="col-sm-12">
+        <h4 class="text-center custom-devise-title"><%= t('sign_up')%></h4>
+      </div>
+      <div class="col-sm-12" id="field">
+        <p><%= f.label :first_name %></p>
+        <%= f.text_field :first_name, autofocus: true, autocomplete: t('first_name'), class: "form-control"%>
+      </div>
+      <div class="col-sm-12" id="field">
+        <p><%= f.label :last_name %></p>
+        <%= f.text_field :last_name, autocomplete: t('last_name'), class: "form-control"%>
+      </div>
+      <div class="col-sm-12" id="field">
+        <p><%= f.label :email %></p>
+        <%= f.email_field :email, autocomplete: t('email'), class: "form-control"%>
+      </div>
 
-  <div>
-    <h3><%= f.label :first_name %></h3>
-    <div class="input-group input-group-lg">
-      <span class="input-group-addon" id="sizing-addon1"><%= f.label :first_name %></span>
-      <%= f.text_field :first_name, autofocus: true, autocomplete: t('first_name'), class: "form-control", style: "height:50px"%>
+
+      <div class="col-sm-12" id="field">
+        <p><%= f.label :password %></p>
+        <%= f.password_field :password, autocomplete: "new-password",class: "form-control"%>
+      </div>
+
+      <div class="col-sm-12" id="field">
+        <p><%= f.label :password_confirmation %></p>
+        <%= f.password_field :password_confirmation, autocomplete: "new-password",class: "form-control"%>
+      </div>
+
+      <div class="col-sm-12" id="field">
+        <%= f.submit t("sign_up"), class: "btn btn-default btn-lg"%>
+      </div>
+      <div class="col-sm-12">
+        <%= render "devise/shared/links" %>
+      </div>
     </div>
   </div>
 
-  <div>
-    <h3><%= f.label :last_name %></h3>
-    <div class="input-group input-group-lg">
-      <span class="input-group-addon" id="sizing-addon1"><%= f.label :last_name %></span>
-      <%= f.text_field :last_name, autocomplete: t('last_name'), class: "form-control", style: "height:50px"%>
-    </div>
-  </div>
-
-  <div>
-    <h3><%= f.label :email %></h3>
-    <div class="input-group input-group-lg">
-      <span class="input-group-addon" id="sizing-addon1"><%= f.label :email %></span>
-      <%= f.email_field :email, autocomplete: t("email"), class: "form-control", style: "height:50px"%>
-    </div>
-  </div>
-
-  <div>
-    <h3><%= f.label :password %>
-      <small>
-        <% if @minimum_password_length %>
-          <em>(<%= @minimum_password_length %>
-            <%= t('custom.edit.min') %></em>
-        </small>
-      <% end %>
-    </h3>
-
-    <div class="input-group input-group-lg">
-      <span class="input-group-addon" id="sizing-addon1"><%= t('custom.edit.password') %></span>
-
-      <%= f.password_field :password, autocomplete: "new-password",class: "form-control", style: "height:50px" %>
-
-    </div>
-  </div>
-
-  <div>
-    <h3><%= f.label :password_confirmation %></h3>
-    <div class="input-group input-group-lg">
-      <span class="input-group-addon" id="sizing-addon1"><%= t('custom.edit.confirm_password') %></span>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", style: "height:50px;"%>
-    </div>
-
-  </div>
-  <div class="actions">
-    <%= f.submit "Sign up", class: "btn btn-default login-button pull-right", style:"width:400px;"%>
-  </div>
-<% end %>
-
-<%= render "devise/shared/links" %>
-</div>
+  <% end %>

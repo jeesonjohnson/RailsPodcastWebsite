@@ -1,0 +1,55 @@
+//Imports appropraite constants used throught css. Mainly coulour constants
+@import 'constants';
+
+
+/*
+Below represents the appropriate layout, for the register page of the podcast application
+*/
+
+#main-register-container{
+  background-color:$nav-side-bg-color;
+  border-radius: 40px;
+  width: 900px;
+  padding-bottom: 40px;
+  div{
+    div#field{
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-bottom: 20px;
+      input{
+        height: 50px;
+        font-size: 20px;
+        border-radius: 17px;
+      }
+      p{
+        font-size: 30px;
+        padding-left: 2px;
+      }
+      input[type="submit"]{
+        width: 400px;
+        font-weight: bold;
+        background-color: $logo-highlight-color;
+        border: none;
+      }
+
+    }
+  }
+}
+.sign-up-devise-button{
+  width: 200px !important;
+  font-weight: bold !important;
+  background-color: $overall-secondary-yellow !important;
+  border: none !important;
+  height: 50px !important;
+  font-size: 20px !important;
+  border-radius: 17px !important;
+  padding-bottom: 20px;
+  a{
+    color: black;
+    text-decoration: none;
+  }
+  a#hover{
+    color: black;
+    text-decoration: none;
+  }
+}

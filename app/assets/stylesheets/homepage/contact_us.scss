@@ -39,9 +39,10 @@
 
 }
 #about-us-container{
-  background: $nav-bottom-bg-color;
+  background: white;
   border-radius: 20px;
   div{
+    p,h1,li,h2,{color: black}
     padding-left: 40px;
     padding-right: 40px;
     padding-bottom: 20px;

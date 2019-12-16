@@ -1,5 +1,50 @@
 <!-- View representing general infromation about the application as a whole. -->
 <div class="container" id="about-us-container">
-  <div><h1 class="text-center"><%= t('about.title')%></h1></div>
-  <div><p><%= t('about.title')%></p></div>
+  <div>
+    <h1 class="text-center"><%= t('about.title')%></h1>
+  </div>
+  <div id="rendered" class="markdown-body">
+    <h1><%= t('title')%></h1>
+    <a href="https://github.com/jeesonjohnson/RailsPodcastWebsite"><%= t('about.git')%></a>    <a href="https://github.com/jeesonjohnson/RailsPodcastWebsite"><%= t('about.git-link')%></a>
+    <p><%= t('about.desc')%></p>
+    <h2><%= t('about.func')%></h2>
+    <p><%= t('about.feat')%></p>
+    <ul>
+      <li><%= t('about.func1')%></li>
+      <li><%= t('about.func2')%></li>
+      <li><%= t('about.func3')%></li>
+      <li><%= t('about.func4')%></li>
+      <li><%= t('about.func5')%></li>
+      <li><%= t('about.func6')%></li>
+      <li><%= t('about.func7')%></li>
+    <p><%= t('about.fin')%></p>
+    <h2><%= t('about.version')%></h2>
+    <p><%= t('about.version_data')%></p>
+    <p><%= t('about.heroku_data')%>
+      <strong>
+        <a href="https://podly-podcasts.herokuapp.com/"><%= t('about.here')%></a>
+      </strong>
+      <%= t('about.here_url')%>
+      <a href="https://podly-podcasts.herokuapp.com/"><%= t('about.heroku_url')%></a>)</p>
+    <h2><%= t('about.install')%></h2>
+    <p><%= t('about.install_command')%></p>
+    <pre><code class="language-bash">bundle install
+  </code></pre>
+    <p><%= t('about.account')%></p>
+    <p>
+      <strong>Email: admin@admin.com Password:adminadmin</strong>
+    </p>
+    <p><%= t('about.reset')%></p>
+    <pre><code class="language-bash">rails db:reset
+  </code></pre>
+    <p><%= t('about.reset_result')%></p>
+    <h2><%= t('about.contribute')%></h2>
+    <p><%= t('about.contribute_pull')%></p>
+    <p><%= t('about.test')%></p>
+    <h2><%= t('about.licence')%></h2>
+    <p>
+      <a href="https://choosealicense.com/licenses/mit/">MIT</a>
+    </p>
+  </div>
+
 </div>

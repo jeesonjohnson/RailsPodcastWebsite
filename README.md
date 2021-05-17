@@ -31,10 +31,6 @@ Before starting the program please run, the below command.
 ```bash
 bundle install
 ```
-As to see the full functionality of the application, a seed file has been used to setup the website database, where a login that is useful to identify more easily the functionality of the application is to use the account with details:
-
- **Email: admin@admin.com Password:adminadmin**
-
 As mentioned above, the application currently has the ability to store a given user's avatar picture, which works perfectly when running on a local system. However if running the following command:
 ```bash
 rails db:reset
